@@ -1,0 +1,17 @@
+:root {
+  /*------Color variables------*/
+  --blogncaseme_mercury: #e8e8e8;
+  --blogncaseme_black: #000000;
+  --blogncaseme_white: #ffffff;
+  --blogncaseme_boulder: #757575;
+  --blogncaseme_cinnabar: #eb4747;
+  --blogncaseme_alto: #dddddd;
+
+  /*------Border radius variables------*/
+  --radius-xs: 2.5px;
+
+  /*------Spacing variables------*/
+  --space-xs: 10px;
+  --space-sm: 14.25px;
+  --space-md: 18px;
+}

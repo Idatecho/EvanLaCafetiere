@@ -1,0 +1,335 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Common CSS
+2. Page CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Common CSS
+--------------------------------------*/
+.user-profile {
+  gap: var(--space-xs);
+  background-color: var(--blogncaseme_mercury);
+  display: flex;
+}
+
+.user-profile__image {
+  height: 40px;
+  opacity: 0.7;
+  width: 40px;
+  object-fit: cover;
+}
+
+.user-profile__subscribe {
+  font-size: 16px !important;
+  width: 48%;
+  @media only screen and (max-width: 1440px) {
+    font-size: 13px !important;
+  }
+}
+
+.description {
+  font-size: 17.1px !important;
+  width: 56%;
+  line-height: 25.65px;
+  text-decoration: underline;
+  @media only screen and (max-width: 1440px) {
+    width: 56%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.article__post {
+  gap: var(--space-md);
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--blogncaseme_alto);
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.article__post-image {
+  height: 120px;
+  width: 38%;
+  object-fit: contain;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.article__post-title-span {
+  font-weight: 300;
+}
+
+/*-------------------------------------
+  2. Page CSS
+--------------------------------------*/
+.class-1920w-light {
+  overflow-x: scroll;
+  background-color: var(--blogncaseme_white);
+  width: 100%;
+}
+
+.container {
+  height: 1300.5px;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.rowtypewriterpn {
+  width: 100%;
+  position: absolute;
+}
+
+.background {
+  height: 1298px;
+  position: relative;
+}
+
+.rowcreatefrom {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+    position: relative;
+  }
+}
+
+.createfrom_one {
+  height: 380px;
+  background-color: var(--blogncaseme_alto);
+  width: 100%;
+  @media only screen and (max-width: 1050px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.stack {
+  height: 1298px;
+  width: 3%;
+  position: relative;
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.stack__row {
+  overflow-x: scroll;
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+.stack__column {
+  width: 200px;
+}
+
+.stack__column--main {
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.stack__column--form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stack__view--create {
+  height: 1200px;
+  background-color: var(--blogncaseme_mercury);
+}
+
+.stack__row--input {
+  width: 53%;
+  display: flex;
+  @media only screen and (max-width: 1440px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.stack__input {
+  height: 13px;
+  background-color: var(--blogncaseme_white);
+  width: 13px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--blogncaseme_boulder);
+}
+
+.stack__text--darkmode {
+  font-size: 16px !important;
+  width: 85%;
+  @media only screen and (max-width: 1440px) {
+    font-size: 13px !important;
+  }
+}
+
+.stack__text--fontsize {
+  font-size: 16px !important;
+  width: 59%;
+  @media only screen and (max-width: 1440px) {
+    width: 100%;
+    font-size: 13px !important;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.stack__input--additional {
+  height: 16px;
+  background-color: var(--blogncaseme_white);
+  width: 65%;
+}
+
+.image {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.article {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.article__introduction {
+  width: 97%;
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 1440px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.article__greeting {
+  font-weight: 900 !important;
+  width: 12%;
+}
+
+.article__author-name {
+  color: var(--blogncaseme_cinnabar) !important;
+  font-weight: 900 !important;
+  width: 18%;
+  text-decoration: underline;
+}
+
+.article__description {
+  width: 44%;
+}
+
+.article__archive-link {
+  color: var(--blogncaseme_cinnabar) !important;
+  width: 26%;
+  text-decoration: underline;
+}
+
+.article__posts-list {
+  gap: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.article__post-title {
+  font-size: 17.1px !important;
+  width: 57%;
+  line-height: 25.65px;
+  text-decoration: underline;
+  @media only screen and (max-width: 1440px) {
+    width: 57%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.article__post-1 {
+  gap: var(--space-md);
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--blogncaseme_alto);
+  @media only screen and (max-width: 1050px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+  }
+}
+
+.article__post-image-1 {
+  height: 120px;
+  width: 38%;
+  object-fit: contain;
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.article__post-title-1 {
+  font-size: 17.1px !important;
+  width: 46%;
+  line-height: 25.65px;
+  text-decoration: underline;
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.description-2 {
+  font-size: 17.1px !important;
+  width: 58%;
+  line-height: 25.65px;
+  text-decoration: underline;
+  @media only screen and (max-width: 1440px) {
+    width: 58%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.article__favorites-heading {
+  width: 81%;
+  @media only screen and (max-width: 1440px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

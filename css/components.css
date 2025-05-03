@@ -1,0 +1,44 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Text CSS
+2. Heading CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Text CSS
+--------------------------------------*/
+.ui.text.size-blog_ncase_me {
+  font-size: 19px;
+  font-weight: 300;
+  @media only screen and (max-width: 1440px) {
+    font-size: 16px;
+  }
+}
+
+.ui.text.size-blog_ncase_me_merriweather_light {
+  font-size: 16px;
+  font-weight: 300;
+  @media only screen and (max-width: 1440px) {
+    font-size: 13px;
+  }
+}
+
+.ui.text {
+  color: var(--blogncaseme_black);
+  font-family: Merriweather;
+}
+
+/*-------------------------------------
+  2. Heading CSS
+--------------------------------------*/
+.ui.heading.size-heading3xl {
+  font-size: 17px;
+  font-weight: 900;
+  @media only screen and (max-width: 1440px) {
+    font-size: 14px;
+  }
+}
+
+.ui.heading {
+  color: var(--blogncaseme_black);
+  font-family: Merriweather;
+}
