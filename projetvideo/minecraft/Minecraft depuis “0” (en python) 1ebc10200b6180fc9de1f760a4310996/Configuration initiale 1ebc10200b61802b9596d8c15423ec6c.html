@@ -1,0 +1,1198 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Configuration initiale</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ebc1020-0b61-802b-9596-d8c15423ec6c" class="page sans"><header><h1 class="page-title">Configuration initiale</h1><p class="page-description"></p></header><div class="page-body"><div id="1ebc1020-0b61-80d7-b906-f913f885ed9f" class="column-list"><div id="1ebc1020-0b61-80e9-aa0e-cba48af49eac" style="width:50%" class="column"><figure id="1ebc1020-0b61-800f-be0e-eea84e3b04ba" class="image"><a href="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-06_204440.png"><img style="width:240px" src="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-06_204440.png"/></a></figure></div><div id="1ebc1020-0b61-8040-a755-f79559e8e826" style="width:50%" class="column"><p id="1ebc1020-0b61-806d-a45b-c5f741e78ca1" class="">On ajoute les fichiers qui nous serons utiles :</p><ul id="1ebc1020-0b61-8030-9800-f5602b024fca" class="bulleted-list"><li style="list-style-type:disc">Un fichier <code>.frag</code> (abréviation de <strong>fragment shader</strong>) est un type de fichier utilisé dans la programmation graphique avec OpenGL (ou des bibliothèques comme <strong>ModernGL</strong>, <strong>WebGL</strong>, etc.). Il contient du code écrit en <strong>GLSL</strong> (<em>OpenGL Shading Language</em>) qui s’exécute <strong>pour chaque pixel (fragment)</strong> d’une image lors du rendu d’une scène 3D.</li></ul><ul id="1ebc1020-0b61-8022-ab78-ebbf5071704c" class="bulleted-list"><li style="list-style-type:disc">Un fichier <code>.vert</code> est un <strong>vertex shader</strong> écrit en <strong>GLSL</strong> (<em>OpenGL Shading Language</em>). C’est un <strong>programme exécuté sur la carte graphique (GPU)</strong>, et il s’applique à <strong>chaque sommet (vertex)</strong> d’un objet 3D.</li></ul></div></div><h3 id="1ebc1020-0b61-8007-8b70-f2ed3192cc6c" class="">On commence à coder ^^</h3><p id="1ebc1020-0b61-80c4-bc04-d2daa6317e04" class="">On peut ajouter dans le fichier settings :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80bd-9799-fb23ed003e16" class="code"><code class="language-Python">BG_COLOR = glm.vec3(0.1, 0.16, 0.25) #le &quot;glm.&quot; est optionelle suivant votre version de PyGLM</code></pre><p id="1ecc1020-0b61-80bb-b002-d8553caa6da1" class="">Ainsi on remplace dans main : </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80f2-9ecd-faf2e8d598c5" class="code"><code class="language-Python">    def render(self):
+        self.ctx.clear(color=BG_COLOR) # &lt;&lt;&lt;&lt;&lt; BG_COLOR
+        self.scene.render()
+        pg.display.flip()</code></pre><hr id="1ecc1020-0b61-807d-9759-eb5d3a01bb37"/><h2 id="1ecc1020-0b61-805c-8b5f-d958b6898ce4" class="">Créons un maillage quadrilatère (quad mesh) :</h2><div id="1ecc1020-0b61-8008-bd28-c78e76888aa4" class="column-list"><div id="1ecc1020-0b61-8096-94f6-ea4371806df3" style="width:25%" class="column"><figure id="1ecc1020-0b61-80a7-9c06-edb80410368c" class="image"><a href="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-07_182332.png"><img style="width:144px" src="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-07_182332.png"/></a></figure></div><div id="1ecc1020-0b61-80ea-9e22-ff0ea4e97615" style="width:75%" class="column"><p id="1ecc1020-0b61-80cb-9b6c-e00883591dad" class="">Voici le mesh en question. Créer un <strong>quad mesh</strong> en 3D sert à représenter une <strong>surface plane composée de 4 sommets</strong> (généralement un rectangle ou un carré). C’est un des <strong>éléments les plus basiques en 3D</strong>, mais il a <strong>plein d’usages essentiels</strong>.</p><p id="1ecc1020-0b61-8024-aa48-fb11f95ca7ea" class="">En OpenGL, on le dessine souvent comme <strong>2 triangles</strong>, car le GPU travaille avec des triangles.</p></div></div><h2 id="1ecc1020-0b61-80ba-b4e0-e9bb0503dd88" class="">Pourquoi créer un quad mesh ?</h2><h3 id="1ecc1020-0b61-801c-810c-e2dc1f11224d" class="">1. <strong>Afficher une image / texture (comme un écran, un sprite ou un fond)</strong></h3><blockquote id="1ecc1020-0b61-807d-a521-cc6d63fc3c0a" class="">Ex : un HUD, une image en fond, ou une carte de texture.</blockquote><h3 id="1ecc1020-0b61-802b-a106-d5f99fb34998" class="">2. <strong>Rendu plein écran (post-processing)</strong></h3><blockquote id="1ecc1020-0b61-80f4-b80a-d313bc8659ca" class="">On affiche un quad qui couvre tout l&#x27;écran pour appliquer un shader (flou, éclairage, effets).</blockquote><h3 id="1ecc1020-0b61-8045-bc28-cbeecbf347bf" class="">3. <strong>Créer une surface d’eau, de sol, de mur, etc.</strong></h3><blockquote id="1ecc1020-0b61-80ba-adc8-c539c7775241" class="">Par exemple, un terrain plat au sol peut être un quad. On peut en instancier plein pour faire un terrain voxel.</blockquote><h3 id="1ecc1020-0b61-8094-b4ac-c52ed49a0aad" class="">4. <strong>Simulation 2D dans un moteur 3D</strong></h3><blockquote id="1ecc1020-0b61-80bd-9c68-d2b27f1747cc" class="">Un quad est parfait pour représenter un sprite 2D dans l’espace 3D.</blockquote><h3 id="1ecc1020-0b61-80e9-b1c8-d15bee36be6d" class="">5. <strong>Test d’un shader ou pipeline</strong></h3><blockquote id="1ecc1020-0b61-80f7-99f9-d90ee51d794c" class="">Pour tester un shader, on affiche souvent un simple quad avec une texture ou une couleur dynamique.</blockquote><p id="1ecc1020-0b61-8069-9f6e-c3e50ac7ab9a" class="">Pour le créer, nous utiliserons nos nouveau fichiers.</p><h3 id="1ecc1020-0b61-802c-9f75-d5fe52e518bc" class="">Dans shader_program.py :</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-806f-96fa-dc1e0ab271d4" class="code"><code class="language-Python"># Importe toutes les constantes, classes ou fonctions définies dans &quot;settings.py&quot;
+from settings import *
+
+
+# Classe principale gérant le programme de shaders (vertex + fragment)
+class ShaderProgram:
+    def __init__(self, app):
+        # Référence à l&#x27;application principale (l&#x27;objet VoxelEngine)
+        self.app = app
+
+        # Contexte OpenGL récupéré depuis l&#x27;app (ctx = contexte moderngl)
+        self.ctx = app.ctx
+
+        # Référence au joueur (souvent utile pour récupérer matrices de caméra : projection et vue)
+        self.player = app.player
+
+        # -------- shaders -------- #
+        # Charge un shader appelé &quot;quad&quot; (donc &quot;quad.vert&quot; et &quot;quad.frag&quot;) et le compile
+        self.quad = self.get_program(shader_name=&#x27;quad&#x27;)
+        # ------------------------- #
+
+        # Initialise certaines variables globales (uniforms) du shader dès le départ
+        self.set_uniforms_on_init()
+
+    # Fonction appelée une seule fois au lancement pour fixer les uniforms initiaux
+    def set_uniforms_on_init(self):
+        # Envoie la matrice de projection du joueur au shader &quot;quad&quot;
+        self.quad[&#x27;m_proj&#x27;].write(self.player.m_proj)
+
+        # Envoie une matrice modèle identitaire (aucune transformation sur l’objet pour le moment)
+        self.quad[&#x27;m_model&#x27;].write(glm.mat4())  # glm.mat4() = matrice 4x4 identité
+
+    # Fonction à appeler à chaque frame pour mettre à jour les valeurs dynamiques
+    def update(self):
+        # Met à jour la matrice de vue (caméra) dans le shader &quot;quad&quot; à chaque frame
+        self.quad[&#x27;m_view&#x27;].write(self.player.m_view)
+
+    # Charge et compile les shaders vertex + fragment à partir des fichiers
+    def get_program(self, shader_name):
+        # Ouvre et lit le fichier vertex shader (ex: shaders/quad.vert)
+        with open(f&#x27;shaders/{shader_name}.vert&#x27;) as file:
+            vertex_shader = file.read()
+
+        # Ouvre et lit le fichier fragment shader (ex: shaders/quad.frag)
+        with open(f&#x27;shaders/{shader_name}.frag&#x27;) as file:
+            fragment_shader = file.read()
+
+        # Crée le shader program avec moderngl à partir du code source
+        program = self.ctx.program(
+            vertex_shader=vertex_shader,
+            fragment_shader=fragment_shader
+        )
+
+        # Retourne le programme compilé (prêt à être utilisé pour dessiner)
+        return program
+</code></pre><h3 id="1ecc1020-0b61-80ff-bf14-c083698f3fd3" class="">📌 Résumé de ce que fait cette classe <code>ShaderProgram</code> :</h3><ul id="1ecc1020-0b61-809c-a951-d0523c2a1aae" class="bulleted-list"><li style="list-style-type:disc">Elle <strong>charge et compile un shader &quot;quad&quot;</strong> (vertex + fragment).</li></ul><ul id="1ecc1020-0b61-80fb-992e-f52fd16209fc" class="bulleted-list"><li style="list-style-type:disc">Elle <strong>envoie les matrices de projection, modèle et vue</strong> au shader :<ul id="1ecc1020-0b61-802d-9f71-dd1eda734c5a" class="bulleted-list"><li style="list-style-type:circle"><code>m_proj</code> : comment la scène est projetée (perspective).</li></ul><ul id="1ecc1020-0b61-801d-9adf-d041120a48ee" class="bulleted-list"><li style="list-style-type:circle"><code>m_model</code> : transformation de l’objet lui-même.</li></ul><ul id="1ecc1020-0b61-802d-b8c3-ee25461a57c0" class="bulleted-list"><li style="list-style-type:circle"><code>m_view</code> : position et orientation de la caméra (du joueur).</li></ul></li></ul><ul id="1ecc1020-0b61-8052-b96b-fdd46262b136" class="bulleted-list"><li style="list-style-type:disc">Elle <strong>met à jour la caméra</strong> à chaque frame via <code>update()</code>.</li></ul><h2 id="1ecc1020-0b61-80a1-9f85-e86198e96b8b" class="">Dans les fichiers quad.vert et quad.frag :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8056-9690-db920b70f92c" class="code"><code class="language-Python">#version 330 core &gt;&gt; Spécifie la version GLSL utilisée.
+
+layout (location = 0) out vec4 fragColor; # Définit une sortie du shader (typiquement l&#x27;ecran))
+
+in vec3 color; # C’est une variable d’entrée venant du vertex shader.
+
+# Fonction principale du fragment shader.
+void main() { 
+    fragColor = vec4(color, 1.0);
+}</code></pre><p id="1ecc1020-0b61-8028-b7b1-dde1fec28ef0" class="">✅ Fonction principale du fragment shader.</p><ul id="1ecc1020-0b61-807f-9213-e7941954bca6" class="bulleted-list"><li style="list-style-type:disc">Tu prends la <strong>couleur interpolée</strong> (<code>vec3</code>) venant du vertex shader, et tu la transformes en <code>vec4</code> en ajoutant une <strong>opacité de 1.0</strong> (totalement opaque).</li></ul><ul id="1ecc1020-0b61-80cb-8bb8-ecd41bec8c4c" class="bulleted-list"><li style="list-style-type:disc">Tu envoies ce résultat à <code>fragColor</code>, donc <strong>le pixel affiché aura cette couleur</strong>.</li></ul><hr id="1ecc1020-0b61-8013-b752-eb813aa0d0cb"/><h3 id="1ecc1020-0b61-800c-b090-fdaf4d7d7102" class="">Et donc, ton fragment shader fait quoi exactement ?</h3><ul id="1ecc1020-0b61-80f7-b7e1-c3cb0d0ac289" class="bulleted-list"><li style="list-style-type:disc">Il <strong>reçoit une couleur</strong> (venant du vertex shader),</li></ul><ul id="1ecc1020-0b61-80a3-ac0d-c6a502594fde" class="bulleted-list"><li style="list-style-type:disc">l’utilise <strong>telle quelle</strong> pour chaque pixel (en ajoutant juste une opacité de 1),</li></ul><ul id="1ecc1020-0b61-80f4-887d-f03789cb185e" class="bulleted-list"><li style="list-style-type:disc">et l’affiche à l’écran.</li></ul><p id="1ecc1020-0b61-8025-81c9-d5f7d80e5385" class=""><strong>le vertex shader </strong><code><strong>quad.vert</strong></code> associé est celui qui fournit la variable <code>color</code> ici</p><h2 id="1ecc1020-0b61-80f7-bc7b-d3ab6e0d3277" class="">Revenons au fichier main :</h2><p id="1ecc1020-0b61-80a2-9f85-d09e9e601e07" class="">Ajoutons l’objet de shader_program :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8043-b82b-cab247a8232f" class="code"><code class="language-Python">from shader_program import ShaderProgram</code></pre><p id="1ecc1020-0b61-80e0-8dc1-c8d853f974d9" class="">Ajoutons dans la class VoxelEngine : (dans def <strong>init</strong>(self) ) :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80a2-b66b-ef007b9f8851" class="code"><code class="language-Python">		self.on_init()</code></pre><p id="1ecc1020-0b61-80e0-91bd-e3d4dc3b2d74" class="">Ajouter <code>self.on_init()</code> dans <code>def __init__(self):</code> sert à <strong>déléguer une partie de l&#x27;initialisation</strong> dans une méthode séparée. C’est une <strong>bonne pratique de structuration du code</strong>. Voici pourquoi :</p><h3 id="1ecc1020-0b61-804d-848a-c917816a569c" class="">🧠 Raisons principales :</h3><h3 id="1ecc1020-0b61-80c8-965c-dab9ad5699ed" class="">1. <strong>Alléger le constructeur (</strong><code><strong>__init__</strong></code><strong>)</strong></h3><ul id="1ecc1020-0b61-802e-a4bc-ffcfc7ca7c5e" class="bulleted-list"><li style="list-style-type:disc">Si ton <code>__init__()</code> commence à devenir long, tu peux <strong>déplacer certaines parties dans une méthode </strong><code><strong>on_init()</strong></code> pour améliorer la <strong>lisibilité</strong>.</li></ul><h3 id="1ecc1020-0b61-80fe-a554-e2de20a9ba32" class="">2. <strong>Mieux organiser le code</strong></h3><ul id="1ecc1020-0b61-802e-9e9b-e26900f021b8" class="bulleted-list"><li style="list-style-type:disc">Tu peux clairement séparer :<ul id="1ecc1020-0b61-804a-b030-e1024ce27a4e" class="bulleted-list"><li style="list-style-type:circle">l&#x27;initialisation de la fenêtre/context OpenGL,</li></ul><ul id="1ecc1020-0b61-8024-ad39-d7ae38262912" class="bulleted-list"><li style="list-style-type:circle">la création des shaders,</li></ul><ul id="1ecc1020-0b61-809d-a661-ff859b0bdae7" class="bulleted-list"><li style="list-style-type:circle">le chargement des objets,</li></ul><ul id="1ecc1020-0b61-8039-b1e5-f9c3ed14e82c" class="bulleted-list"><li style="list-style-type:circle">etc.</li></ul></li></ul><h3 id="1ecc1020-0b61-8055-995c-f40239db57e8" class="">3. <strong>Faciliter l’héritage ou l’extension</strong></h3><ul id="1ecc1020-0b61-80b7-a76b-e00feaa25308" class="bulleted-list"><li style="list-style-type:disc">Si tu veux créer une sous-classe de <code>VoxelEngine</code>, tu peux <strong>surcharger </strong><code><strong>on_init()</strong></code> pour ajouter des choses <strong>sans réécrire </strong><code><strong>__init__()</strong></code>.</li></ul><p id="1ecc1020-0b61-8087-93a7-fbca362750aa" class="">On créer ainsi une fonction on_init(self) :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80e5-bca5-f1c0bd4d83fd" class="code"><code class="language-Python">    def on_init(self):
+        self.shader_program = ShaderProgram(self)</code></pre><p id="1ecc1020-0b61-8063-bf39-f6d248ee8d7e" class="">On ajoute également dans update(self) :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80e0-93cc-d5109fbebf16" class="code"><code class="language-Python">		self.shader_program.update()</code></pre><p id="1ecc1020-0b61-8021-b00b-fe8389a48dbe" class="">Cela signifie que <strong>l’objet </strong><code><strong>ShaderProgram</strong></code> (ton gestionnaire de shaders) a lui aussi des choses à <strong>mettre à jour à chaque frame</strong> (c’est-à-dire à chaque tour de boucle).</p><h3 id="1ecc1020-0b61-803a-80d6-c0dea805e7a5" class="">Pourquoi est-ce nécessaire ?</h3><ul id="1ecc1020-0b61-8058-81bb-efec59664f0d" class="bulleted-list"><li style="list-style-type:disc">La <strong>caméra (ou joueur)</strong> peut <strong>bouger</strong>.</li></ul><ul id="1ecc1020-0b61-802a-b6d0-eadeed2a8842" class="bulleted-list"><li style="list-style-type:disc">Or, pour que la scène soit correctement affichée du <strong>point de vue du joueur</strong>, il faut <strong>mettre à jour la matrice de vue (</strong><code><strong>m_view</strong></code><strong>)</strong> à chaque frame.</li></ul><ul id="1ecc1020-0b61-80e3-86ec-d9df3a5f732c" class="bulleted-list"><li style="list-style-type:disc">Si tu ne fais pas ça, la caméra reste <strong>fixée</strong> (tu ne vois pas tes mouvements à l&#x27;écran).</li></ul><h2 id="1ecc1020-0b61-800e-8e4c-f478d0625a63" class="">Allons maintenant dans base_mesh.py :</h2><p id="1ecc1020-0b61-8053-9944-fdaaa5cb37f9" class="">Ecrivons :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8025-bef5-d4138d3ce1ca" class="code"><code class="language-Python">import numpy as np  </code></pre><p id="1ecc1020-0b61-8003-9876-d0abec85eded" class="">→ Importe la bibliothèque NumPy, utilisée ici pour créer et manipuler des tableaux numériques (par exemple, les données des sommets d&#x27;un mesh).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80eb-8010-dcff851868c8" class="code"><code class="language-Python">class BaseMesh:
+	def __init__(self):</code></pre><p id="1ecc1020-0b61-8043-93ac-e0446ed08004" class="">→ Déclare une <strong>classe de base</strong> appelée <code>BaseMesh</code>. Elle sert de modèle pour créer des objets 3D (ou 2D), mais ne contient pas encore de forme concrète.<br/><br/>init → Méthode spéciale appelée automatiquement lors de la création d’un objet de cette classe.<br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80a6-9d3a-efb6e5ea09cb" class="code"><code class="language-Python">class BaseMesh:
+	def __init__(self):
+		self.ctx = None</code></pre><p id="1ecc1020-0b61-806c-ad71-c0450c7f4225" class="">→ Contiendra le <strong>contexte ModernGL</strong>, indispensable pour créer les buffers et dessiner.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8040-a0c9-f2eb261ef72b" class="code"><code class="language-Python">class BaseMesh:
+	def __init__(self):
+		self.ctx = None
+		self.program = None</code></pre><p id="1ecc1020-0b61-80e2-bcb0-f2a0e1c5bc15" class="">→ Représente le <strong>programme shader</strong> (GLSL) qui sera utilisé pour dessiner l’objet.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80ca-8af3-f1ada22ecedf" class="code"><code class="language-Python">class BaseMesh:
+	def __init__(self):
+		self.ctx = None
+		self.program = None
+		self.vbo_format = None
+</code></pre><p id="1ecc1020-0b61-8047-8352-c26f9ddad953" class="">→ Format des données de sommet (exemple : <code>&#x27;3f 3f&#x27;</code> pour 3 floats de position + 3 floats de couleur).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80aa-8428-e2432e73bdda" class="code"><code class="language-Python">		self.attrs: tuple[str, ...] = None # je vais ecrire comme ceci maintenant tu as compris</code></pre><p id="1ecc1020-0b61-80ab-8387-d8bf00ad89fe" class="">→ Les <strong>noms des attributs GLSL</strong> (ex : <code>(&#x27;in_position&#x27;, &#x27;in_color&#x27;)</code>) auxquels les données seront connectées.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8042-9dfe-ebc91d69e51f" class="code"><code class="language-Python">        self.vao = None</code></pre><p id="1ecc1020-0b61-80db-bb60-cc77319b880a" class="">→ Contiendra le <strong>VAO</strong> (Vertex Array Object), qui regroupe les infos de dessin : buffer, attributs, shaders.</p><hr id="1ecc1020-0b61-8041-b395-cf505d431736"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80bf-ad2f-c024acc5324f" class="code"><code class="language-Python">    def get_vertex_data(self) -&gt; np.array: ... # nouvelle methode dans la class</code></pre><p id="1ecc1020-0b61-80d6-abca-e3f4ae89c2b9" class="">→ Méthode vide (à implémenter dans une sous-classe), qui doit retourner les <strong>données de sommet</strong> sous forme d’un <code>np.array</code>.</p><hr id="1ecc1020-0b61-807e-9669-c499d32afbfb"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80b6-8de1-d8eeb09fdb1b" class="code"><code class="language-Python">    def get_vao(self):</code></pre><p id="1ecc1020-0b61-808c-bbb9-eeac1e4221c5" class="">→ Crée et retourne un <strong>VAO</strong> à partir des données de sommet et des shaders.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-806e-979f-cc88b9765bf1" class="code"><code class="language-Python">        vertex_data = self.get_vertex_data()</code></pre><p id="1ecc1020-0b61-80b5-b3c7-eda0ded61e0f" class="">→ Récupère les données de sommet via la méthode <code>get_vertex_data()</code> (à définir dans une sous-classe).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80a4-959a-ecf51d185ab8" class="code"><code class="language-Python">        vbo = self.ctx.buffer(vertex_data)</code></pre><p id="1ecc1020-0b61-8062-a8d4-d8a87c566004" class="">→ Crée un <strong>VBO (Vertex Buffer Object)</strong> avec les données. C’est un tampon GPU contenant les positions, couleurs, etc.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8022-8bd7-d55afb438a4d" class="code"><code class="language-Python">        vao = self.ctx.vertex_array(
+            self.program, [(vbo, self.vbo_format, *self.attrs)], skip_errors=True
+        )</code></pre><p id="1ecc1020-0b61-802c-9597-d40384f74f11" class="">→ Crée un <strong>VAO (Vertex Array Object)</strong> qui lie :</p><ul id="1ecc1020-0b61-803b-9e52-da570bc99018" class="bulleted-list"><li style="list-style-type:disc">le shader (<code>self.program</code>),</li></ul><ul id="1ecc1020-0b61-80c2-988a-ecab9445af94" class="bulleted-list"><li style="list-style-type:disc">le VBO (données des sommets),</li></ul><ul id="1ecc1020-0b61-8029-bfb1-c780dcc3e839" class="bulleted-list"><li style="list-style-type:disc">le format des données (<code>self.vbo_format</code>),</li></ul><ul id="1ecc1020-0b61-80a0-82b8-ea07b5370349" class="bulleted-list"><li style="list-style-type:disc">et les attributs GLSL (<code>self.attrs</code>).</li></ul><p id="1ecc1020-0b61-8044-b2d4-f45a8ad13125" class="">L’option <code>skip_errors=True</code> permet d’ignorer les erreurs si certains attributs ne sont pas utilisés dans les shaders.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-807e-bab9-d73198e892c2" class="code"><code class="language-Python">        return vao</code></pre><p id="1ecc1020-0b61-80a4-946b-ce8934ecedd1" class="">→ Retourne le VAO prêt à être utilisé pour dessiner l’objet.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80bb-8720-f95f40a00ad6" class="code"><code class="language-Python">    def render(self):
+        self.vao.render()</code></pre><p id="1ecc1020-0b61-80c0-851d-dc3800f8c2e2" class="">→ Dessine l’objet en appelant la méthode <code>render()</code> du VAO. Cela envoie les données à la carte graphique et déclenche le rendu via les shaders.</p><h3 id="1ecc1020-0b61-8049-9c29-edd4258a3fc6" class="">En résumé :</h3><p id="1ecc1020-0b61-808c-9e4e-f348780bd807" class=""><code>BaseMesh</code> est une <strong>classe abstraite</strong> conçue pour dessiner des objets. Elle ne contient pas de forme par défaut, mais elle fournit :</p><ul id="1ecc1020-0b61-8066-8d3a-e1f4fc0230a7" class="bulleted-list"><li style="list-style-type:disc">les outils pour créer un VBO et un VAO,</li></ul><ul id="1ecc1020-0b61-80c0-8bc4-ed29d5d014b4" class="bulleted-list"><li style="list-style-type:disc">la méthode <code>render()</code> pour afficher l’objet,</li></ul><ul id="1ecc1020-0b61-803b-bfd5-e4d2265b9463" class="bulleted-list"><li style="list-style-type:disc">une structure réutilisable dans des classes filles comme <code>QuadMesh</code>, <code>CubeMesh</code>, etc.</li></ul><hr id="1ecc1020-0b61-80fb-9fed-f518a42a2a95"/><h2 id="1ecc1020-0b61-8050-8f0c-e43d91d73929" class="">Explication du VBO et du VAO :</h2><p id="1ecc1020-0b61-80db-bd06-ec07b2c18d49" class="">Un <strong>VBO</strong> (Vertex Buffer Object) et un <strong>VAO</strong> (Vertex Array Object) sont deux concepts fondamentaux en <strong>OpenGL</strong>, utilisés pour gérer les données des sommets (comme les positions, couleurs, normales, etc.) et optimiser le processus de rendu 3D.</p><h3 id="1ecc1020-0b61-80a2-9764-cb36f8788c8e" class="">1. <strong>VBO (Vertex Buffer Object) :</strong></h3><p id="1ecc1020-0b61-8064-9cce-f8aab96f3aa8" class="">Un VBO est un objet de tampon sur le GPU qui stocke les données des sommets. Plutôt que de transférer ces données à chaque appel de dessin, vous chargez ces données une seule fois dans la mémoire du GPU, ce qui réduit le coût des transferts de données entre la mémoire du CPU et celle du GPU.</p><h3 id="1ecc1020-0b61-80b4-adc9-fd03aa65dbe7" class="">En résumé, le VBO sert à :</h3><ul id="1ecc1020-0b61-8092-bd14-dd00c5052d71" class="bulleted-list"><li style="list-style-type:disc">Stocker les données de sommets dans la mémoire du GPU.</li></ul><ul id="1ecc1020-0b61-80f1-8002-e985e8356c19" class="bulleted-list"><li style="list-style-type:disc">Optimiser les performances en évitant de répéter les transferts de données à chaque rendu.</li></ul><p id="1ecc1020-0b61-80de-9e83-e4397a481670" class=""><strong>Exemple</strong> : Vous avez un modèle 3D et vous voulez transférer les coordonnées des sommets, les couleurs et les normales sur le GPU. Le VBO contient toutes ces informations.</p><h3 id="1ecc1020-0b61-8097-b89b-cd7d58a5c8dd" class="">2. <strong>VAO (Vertex Array Object) :</strong></h3><p id="1ecc1020-0b61-80bb-abf3-e5ebd118b10d" class="">Le VAO est un objet qui conserve la configuration du VBO et les attributs de sommet associés. En d&#x27;autres termes, il permet de regrouper les informations sur la manière dont le VBO est utilisé dans le programme de shader (par exemple, comment les données des sommets doivent être lues). Quand vous liez un VAO, cela configure automatiquement la façon dont OpenGL doit interpréter les données du VBO.</p><h3 id="1ecc1020-0b61-8050-ac88-fd73849c87e3" class="">En résumé, le VAO sert à :</h3><ul id="1ecc1020-0b61-8011-9c54-e2f8acc2956e" class="bulleted-list"><li style="list-style-type:disc">Stocker la configuration des attributs de sommet et les associations avec les VBO.</li></ul><ul id="1ecc1020-0b61-803b-b444-c0162379220b" class="bulleted-list"><li style="list-style-type:disc">Simplifier le processus de rendu en permettant de reconfigurer rapidement l&#x27;état des attributs de sommet sans avoir à tout spécifier à chaque fois.</li></ul><h3 id="1ecc1020-0b61-80f5-bbf5-e0ffea170432" class=""><strong>Relation entre VBO et VAO :</strong></h3><ul id="1ecc1020-0b61-80a0-b11d-fde7d778080e" class="bulleted-list"><li style="list-style-type:disc">Le <strong>VBO</strong> contient les données des sommets (comme les positions, les couleurs, etc.).</li></ul><ul id="1ecc1020-0b61-809c-a945-e2cb0c31b2d3" class="bulleted-list"><li style="list-style-type:disc">Le <strong>VAO</strong> fait le lien entre ces données et le programme de shader, en indiquant comment elles doivent être interprétées (par exemple, quelles colonnes dans le VBO correspondent aux positions, couleurs, etc.).</li></ul><h3 id="1ecc1020-0b61-8037-8b29-d962b7586300" class=""><strong>Comment ils nous aident ?</strong></h3><ul id="1ecc1020-0b61-8020-8528-c229270139fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimisation des performances</strong> : En chargeant les données une fois dans la mémoire du GPU, le VBO permet de ne pas avoir à transférer des données constamment entre le CPU et le GPU. Le VAO, quant à lui, simplifie et optimise la gestion des différents attributs de sommet.</li></ul><ul id="1ecc1020-0b61-8054-a56a-c25cd62b808f" class="bulleted-list"><li style="list-style-type:disc"><strong>Simplicité de gestion</strong> : Plutôt que de reconfigurer les attributs de sommet à chaque dessin, vous utilisez le VAO pour appliquer rapidement une configuration déjà définie.</li></ul><p id="1ecc1020-0b61-80df-95b2-df2189180e0b" class="">En somme, <strong>le VBO stocke les données</strong>, et <strong>le VAO gère la façon dont ces données sont utilisées</strong> dans le pipeline de rendu 3D.</p><h2 id="1ecc1020-0b61-8010-8de4-c3a4d883a883" class="">Allons à présent dans le fichier quad_mesh.py</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80c0-a2ae-cd8d99bca86d" class="code"><code class="language-Python">from settings import *
+
+# Importe les paramètres globaux du projet (comme la taille de la fenêtre, etc.)
+
+from meshes.base_mesh import BaseMesh
+
+# Importe la classe de base &quot;BaseMesh&quot; qui définit la structure générale d’un mesh
+
+class QuadMesh(BaseMesh):
+
+    # Déclare une classe QuadMesh qui hérite de BaseMesh (utilise les méthodes et attributs définis dans BaseMesh)
+
+    def __init__(self, app):
+        super().__init__()
+
+        # Appelle le constructeur de la classe parente (BaseMesh)
+
+        self.app = app
+
+        # Stocke l’objet principal de l&#x27;application pour accéder à ses composants
+
+        self.ctx = app.ctx
+
+        # Récupère le contexte OpenGL depuis l&#x27;application (nécessaire pour créer les buffers, VAO, etc.)
+
+        self.program = app.shader_program.quad
+
+        # Utilise le programme shader nommé &quot;quad&quot; défini dans ShaderProgram
+
+        self.vbo_format = &#x27;3f 3f&#x27;
+
+        # Définit le format des données pour chaque sommet :
+        # 3 floats pour la position (x, y, z) et 3 floats pour la couleur (r, g, b)
+
+        self.attrs = (&#x27;in_position&#x27;, &#x27;in_color&#x27;)
+
+        # Noms des attributs utilisés dans les shaders pour lier les données du VBO
+
+        self.vao = self.get_vao()
+
+        # Appelle la méthode pour créer un VAO (Vertex Array Object) basé sur les données ci-dessus
+
+    def get_vertex_data(self):
+
+        # Début de la méthode qui renvoie les données des sommets
+
+        vertices = [
+            (0.5, 0.5, 0.0), (-0.5, 0.5, 0.0), (-0.5, -0.5, 0.0),
+            (0.5, 0.5, 0.0), (-0.5, -0.5, 0.0), (0.5, -0.5, 0.0)
+        ]
+
+        # Coordonnées des 6 sommets du quad (deux triangles) centrés à l’origine
+
+        colors = [
+            (0, 1, 0), (1, 0, 0), (1, 1, 0),
+            (0, 1, 0), (1, 1, 0), (0, 0, 1)
+        ]
+
+        # Couleurs associées à chaque sommet (r, g, b)
+
+        vertex_data = np.hstack([vertices, colors], dtype=&#x27;float32&#x27;)
+
+        # Concatène les positions et les couleurs dans un seul tableau, de type float32
+
+        return vertex_data
+
+        # Retourne le tableau final qui contient les données des sommets (positions + couleurs)
+</code></pre><h3 id="1ecc1020-0b61-80e0-9fe8-ea982134c65f" class="">Voici le rôle spécifique du code :</h3><ol type="1" id="1ecc1020-0b61-807d-b319-f76376ebb8dd" class="numbered-list" start="1"><li><strong>Représentation d&#x27;un Quad</strong> :<ul id="1ecc1020-0b61-8030-bf96-ce2d82c1986e" class="bulleted-list"><li style="list-style-type:disc">Ce code crée un objet 3D basique constitué de 6 sommets qui forment un quadrilatère (deux triangles). Chaque sommet a deux propriétés :<ul id="1ecc1020-0b61-8012-822d-d4a30987d0c6" class="bulleted-list"><li style="list-style-type:circle"><strong>Position</strong> dans l&#x27;espace 3D (<code>x, y, z</code>).</li></ul><ul id="1ecc1020-0b61-80f8-a6b7-d225e7ab53f7" class="bulleted-list"><li style="list-style-type:circle"><strong>Couleur</strong> du sommet (<code>r, g, b</code>).</li></ul></li></ul></li></ol><ol type="1" id="1ecc1020-0b61-8024-848d-c416cd5ef1fc" class="numbered-list" start="2"><li><strong>Gestion du contexte OpenGL</strong> :<ul id="1ecc1020-0b61-8024-aad0-d47e6fe7ce45" class="bulleted-list"><li style="list-style-type:disc"><code>self.ctx = app.ctx</code> permet de se connecter à l’environnement OpenGL via le contexte d’application passé lors de l’instanciation de la classe.</li></ul></li></ol><ol type="1" id="1ecc1020-0b61-8000-9a0d-ee241072d709" class="numbered-list" start="3"><li><strong>Shaders pour les rendus</strong> :<ul id="1ecc1020-0b61-80c1-bba6-e82d8a9fbddf" class="bulleted-list"><li style="list-style-type:disc">Le programme shader est récupéré via <code>self.program = app.shader_program.quad</code>, ce qui permet d&#x27;appliquer un shader spécifique pour dessiner le quadrilatère avec les bonnes transformations et couleurs.</li></ul></li></ol><ol type="1" id="1ecc1020-0b61-8049-907b-c387de43309e" class="numbered-list" start="4"><li><strong>Vertex Buffer Object (VBO)</strong> :<ul id="1ecc1020-0b61-8018-9054-f4365e248b93" class="bulleted-list"><li style="list-style-type:disc">La méthode <code>get_vertex_data()</code> prépare les données des sommets. Elle crée un tableau contenant les positions et les couleurs des sommets, qu&#x27;OpenGL va utiliser pour le rendu.</li></ul></li></ol><ol type="1" id="1ecc1020-0b61-80a2-ba27-c68d8e86c0ed" class="numbered-list" start="5"><li><strong>Vertex Array Object (VAO)</strong> :<ul id="1ecc1020-0b61-8049-81ae-da3e37e59fce" class="bulleted-list"><li style="list-style-type:disc">Le VAO créé par <code>self.vao = self.get_vao()</code> est utilisé pour organiser et lier les données du VBO avec le shader, et pour simplifier le dessin de l’objet à l&#x27;écran.</li></ul></li></ol><h2 id="1ecc1020-0b61-80fd-8d58-d5445467a011" class="">Dans quad.vert :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-806e-ac9a-e8f0c60b0a10" class="code"><code class="language-Python">#version 330 core
+
+layout (location = 0) in vec3 in_position;
+layout (location = 1) in vec3 in_color;
+
+uniform mat4 m_proj;
+uniform mat4 m_view;
+uniform mat4 m_model;
+
+out vec3 color;
+
+
+void main() {
+    color = in_color;
+    gl_Position = m_proj * m_view * m_model * vec4(in_position, 1.0);
+}
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80f9-b9be-db89a8ad8956" class="code"><code class="language-Python">layout (location = 0) in vec3 in_position;</code></pre><ul id="1ecc1020-0b61-80b7-a8a3-f188783450f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Déclare un attribut d&#x27;entrée </strong><code><strong>in_position</strong></code> de type <code>vec3</code> (un vecteur 3D), qui représentera la position des sommets dans l&#x27;espace 3D.</li></ul><ul id="1ecc1020-0b61-8002-ac4d-f42662c5a31a" class="bulleted-list"><li style="list-style-type:disc"><code><strong>layout (location = 0)</strong></code> indique que cet attribut sera lié à l&#x27;emplacement 0 dans le programme shader, ce qui signifie qu&#x27;il correspond à l&#x27;attribut de position dans le tableau de sommets envoyé au shader.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80a0-a459-dbf1d8b9eb2c" class="code"><code class="language-Python">layout (location = 1) in vec3 in_color;</code></pre><ul id="1ecc1020-0b61-80ff-8c83-c4075598ad5b" class="bulleted-list"><li style="list-style-type:disc"><strong>Déclare un autre attribut d&#x27;entrée </strong><code><strong>in_color</strong></code> de type <code>vec3</code> (un vecteur 3D), qui représentera la couleur de chaque sommet (rouge, vert, bleu).</li></ul><ul id="1ecc1020-0b61-80db-9554-dd16062cb53f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>layout (location = 1)</strong></code> indique que cet attribut est lié à l&#x27;emplacement 1, ce qui signifie qu&#x27;il correspond à la couleur dans le tableau de sommets envoyé au shader.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-808a-a22f-dc137b3f17a4" class="code"><code class="language-Python">uniform mat4 m_proj;
+uniform mat4 m_view;
+uniform mat4 m_model;</code></pre><ul id="1ecc1020-0b61-8081-a485-fbf9904fc50b" class="bulleted-list"><li style="list-style-type:disc"><strong>Déclare trois matrices uniformes</strong> : <code>m_proj</code>, <code>m_view</code>, <code>m_model</code>.<ul id="1ecc1020-0b61-80d7-a38a-cc77aed8b800" class="bulleted-list"><li style="list-style-type:circle"><code>m_proj</code> : la <strong>matrice de projection</strong>, utilisée pour transformer les coordonnées 3D en coordonnées 2D à l&#x27;écran.</li></ul><ul id="1ecc1020-0b61-80d7-b754-dbca170fc2d8" class="bulleted-list"><li style="list-style-type:circle"><code>m_view</code> : la <strong>matrice de vue</strong>, utilisée pour placer et orienter la caméra dans l&#x27;espace 3D.</li></ul><ul id="1ecc1020-0b61-8056-9f79-dce77ba8e910" class="bulleted-list"><li style="list-style-type:circle"><code>m_model</code> : la <strong>matrice du modèle</strong>, utilisée pour définir la position, l&#x27;orientation et l&#x27;échelle du mesh dans l&#x27;espace 3D.</li></ul></li></ul><ul id="1ecc1020-0b61-80e6-bfeb-e5f3d080e703" class="bulleted-list"><li style="list-style-type:disc">Ces matrices sont envoyées au shader depuis le programme principal, et elles sont utilisées pour appliquer les transformations géométriques.</li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8036-826a-c0fb861074a9" class="code"><code class="language-Python">out vec3 color;</code></pre><p id="1ecc1020-0b61-8045-b6b1-c030b4fa3d47" class=""><strong>Déclare une variable de sortie </strong><code><strong>color</strong></code>, de type <code>vec3</code>. Elle sera utilisée pour passer la couleur du sommet du vertex shader vers le fragment shader (qui viendra après ce shader dans le pipeline graphique).</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80ce-8bad-e8157f1d608f" class="code"><code class="language-Python">void main() {</code></pre><p id="1ecc1020-0b61-8013-a587-f842cd43ad04" class=""><strong>Début de la fonction principale </strong><code><strong>main()</strong></code> qui est exécutée pour chaque sommet. C’est la fonction qui sera appelée par OpenGL lors du rendu de chaque vertex.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-809c-ae09-fb90788469bd" class="code"><code class="language-Python">    color = in_color;</code></pre><p id="1ecc1020-0b61-803c-b6f1-c9a107af54a3" class=""><strong>Assigne la couleur d&#x27;entrée </strong><code><strong>in_color</strong></code> (qui vient des données des sommets) à la variable de sortie <code>color</code>. Cette couleur sera ensuite utilisée dans le fragment shader pour colorier le pixel correspondant à ce sommet.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80e7-a4a1-e2b460e8af59" class="code"><code class="language-Python">    gl_Position = m_proj * m_view * m_model * vec4(in_position, 1.0);</code></pre><ul id="1ecc1020-0b61-80f0-96b3-f7c642afe297" class="bulleted-list"><li style="list-style-type:disc"><strong>Calcule la position du sommet dans l&#x27;espace de projection</strong> (coordonnées d&#x27;écran) en multipliant les trois matrices : <code>m_proj</code>, <code>m_view</code> et <code>m_model</code>, ainsi que la position du sommet <code>in_position</code> (en ajoutant la composante homogène <code>1.0</code> avec <code>vec4(in_position, 1.0)</code>).</li></ul><ul id="1ecc1020-0b61-803e-bb73-da4384d19513" class="bulleted-list"><li style="list-style-type:disc"><code><strong>gl_Position</strong></code> est une variable prédéfinie dans le vertex shader, et elle détermine la position finale du sommet dans l&#x27;espace de projection (c&#x27;est-à-dire l’espace de l&#x27;écran).<ul id="1ecc1020-0b61-802b-a655-d6a9b27dd985" class="bulleted-list"><li style="list-style-type:circle">La multiplication des matrices permet de combiner les transformations : la matrice du modèle place l&#x27;objet dans la scène, la matrice de vue définit la position de la caméra, et la matrice de projection convertit les coordonnées 3D en coordonnées 2D pour l&#x27;affichage à l&#x27;écran.</li></ul></li></ul><h3 id="1ecc1020-0b61-8064-bed9-d0c43916cadb" class="">Résumé</h3><p id="1ecc1020-0b61-8017-9571-eb4818092bda" class="">Le shader <code>quad.vert</code> est un <strong>vertex shader</strong> qui effectue les étapes suivantes :</p><ol type="1" id="1ecc1020-0b61-8096-8f84-e0845c90e122" class="numbered-list" start="1"><li>Il prend en entrée la position des sommets (<code>in_position</code>) et la couleur des sommets (<code>in_color</code>).</li></ol><ol type="1" id="1ecc1020-0b61-8093-bd0a-efc469fa6531" class="numbered-list" start="2"><li>Il applique des transformations géométriques à la position des sommets en utilisant trois matrices : <strong>modèle</strong>, <strong>vue</strong> et <strong>projection</strong>.</li></ol><ol type="1" id="1ecc1020-0b61-8088-b832-c3fbfadd5ff0" class="numbered-list" start="3"><li>Il assigne la couleur du sommet à une variable de sortie <code>color</code> qui sera utilisée par le fragment shader pour colorier les pixels.</li></ol><ol type="1" id="1ecc1020-0b61-8085-897d-ebd2b37c2543" class="numbered-list" start="4"><li>Il renvoie la position transformée de chaque sommet dans la variable prédéfinie <code>gl_Position</code>.</li></ol><p id="1ecc1020-0b61-80bb-8d37-e65a8e4b172a" class="">Ce shader est donc essentiel pour <strong>transformer les coordonnées 3D</strong> des sommets en coordonnées 2D affichables à l&#x27;écran et pour transmettre la couleur de chaque sommet au pipeline de rendu graphique.</p><h2 id="1ecc1020-0b61-80ef-9a05-e76db06b86f7" class="">Allons dans le fichier scene.py :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80c7-80f4-e241624606c2" class="code"><code class="language-Python">from settings import *  
+
+from meshes.quad_mesh import QuadMesh  
+# Importe la classe `QuadMesh` depuis le fichier `quad_mesh.py` dans le répertoire 
+#`meshes`. La classe `QuadMesh` est utilisée pour créer un objet représentant un quad
+# (un rectangle ou une surface plane), qui peut être rendu dans la scène.
+
+class Scene: 
+    
+    def __init__(self, app):  
+        
+        self.app = app  
+        # Assigne l&#x27;argument `app` à l&#x27;attribut `self.app`. 
+        #Cela permet à l&#x27;instance de la scène d&#x27;accéder à 
+        # l&#x27;application principale et à ses ressources.
+        
+        self.quad = QuadMesh(self.app)  
+        # Crée une instance de `QuadMesh` et l&#x27;assigne à l&#x27;attribut `self.quad`.
+        # `QuadMesh` est responsable de la création et du rendu d&#x27;un quad
+
+    def update(self):  
+        
+        pass  
+
+    def render(self):  # Cette méthode est responsable de 
+                       #l&#x27;affichage des objets graphiques dans la scène. 
+        
+        self.quad.render()  # Appelle la méthode `render` de l&#x27;objet `self.quad`. 
+        #Cela permet de rendre le quad à l&#x27;écran. 
+        #La méthode `render` de `QuadMesh` s&#x27;assure que l&#x27;objet est correctement 
+        #dessiné à l&#x27;aide des ressources et des shaders associés à `QuadMesh`.
+</code></pre><h2 id="1ecc1020-0b61-8097-b195-d11049a189e2" class="">Dans le fichier main :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8054-a2a1-eb6e877eecd3" class="code"><code class="language-Python">from scene import Scene</code></pre><p id="1ecc1020-0b61-8038-a695-fd7179c99027" class="">dans on_init :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-80e0-af99-c7f748b17b53" class="code"><code class="language-Python">    def on_init(self):
+        self.shader_program = ShaderProgram(self)
+        self.scene = Scene(self) # &lt;&lt;&lt;&lt;&lt;</code></pre><p id="1ecc1020-0b61-809a-9dc2-fd47c940a6bc" class="">dans update :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-801e-a7c4-e7f6cdc3b604" class="code"><code class="language-Python">    def update(self):
+        self.shader_program.update()
+        self.scene.update() # &lt;&lt;&lt;&lt;&lt;</code></pre><p id="1ecc1020-0b61-80a4-80a2-e45195de5fe4" class="">dans render :</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8058-bd87-c07903e9894d" class="code"><code class="language-Python">    def render(self):
+        self.ctx.clear(color=BG_COLOR)
+        self.scene.render() # &lt;&lt;&lt;&lt;&lt;
+        pg.display.flip()</code></pre><hr id="1ecc1020-0b61-8076-b518-df8ba9e1580e"/><p id="1ecc1020-0b61-8012-901d-d4cf383414fd" class="">A ce stade, le quad devrai s’afficher.. mais on ne peut pas se déplacer </p><hr id="1ecc1020-0b61-8088-81c6-d4e9cec60ab0"/><p id="1ecc1020-0b61-8094-b05c-fb94e2ee6444" class="">Pour ce faire, créons deux fichiers : “camera” et “player”</p><h2 id="1ecc1020-0b61-8051-91a3-f24cf58758de" class="">Dans le fichier camera :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8054-8f1a-d841cee6d5c3" class="code"><code class="language-Python">from settings import *
+
+
+class Camera:
+    def __init__(self, position, yaw, pitch):
+        # Initialise la position de la caméra comme un vecteur 3D
+        self.position = glm.vec3(position)
+
+        # Yaw : rotation horizontale, convertie en radians
+        self.yaw = glm.radians(yaw)
+
+        # Pitch : rotation verticale, convertie en radians
+        self.pitch = glm.radians(pitch)
+
+        # Vecteur haut (vers le haut de la scène)
+        self.up = glm.vec3(0, 1, 0)
+
+        # Vecteur droite (horizontal vers la droite)
+        self.right = glm.vec3(1, 0, 0)
+
+        # Vecteur avant (direction de vue initiale)
+        self.forward = glm.vec3(0, 0, -1)
+
+        # Matrice de projection en perspective
+        self.m_proj = glm.perspective(V_FOV, ASPECT_RATIO, NEAR, FAR)
+
+        # Matrice de vue (sera mise à jour plus tard)
+        self.m_view = glm.mat4()
+
+
+    def update(self):
+        # Met à jour les vecteurs directionnels selon yaw/pitch
+        self.update_vectors()
+
+        # Met à jour la matrice de vue selon la nouvelle orientation
+        self.update_view_matrix()
+
+
+    def update_view_matrix(self):
+        # Calcule la matrice de vue avec glm.lookAt : position, cible, et vecteur &quot;up&quot;
+        self.m_view = glm.lookAt(self.position, self.position + self.forward, self.up)
+
+
+    def update_vectors(self):
+        # Calcule le vecteur forward à partir des angles yaw et pitch
+        self.forward.x = glm.cos(self.yaw) * glm.cos(self.pitch)
+        self.forward.y = glm.sin(self.pitch)
+        self.forward.z = glm.sin(self.yaw) * glm.cos(self.pitch)
+
+        # Normalise le vecteur forward
+        self.forward = glm.normalize(self.forward)
+
+        # Calcule le vecteur right perpendiculaire à forward et au haut global
+        self.right = glm.normalize(glm.cross(self.forward, glm.vec3(0, 1, 0)))
+
+        # Calcule le vecteur up perpendiculaire à right et forward
+        self.up = glm.normalize(glm.cross(self.right, self.forward))
+
+
+    def rotate_pitch(self, delta_y):
+        # Modifie l&#x27;angle vertical (pitch) selon le mouvement de la souris
+        self.pitch -= delta_y
+
+        # Limite l&#x27;angle pitch pour éviter les retournements de caméra
+        self.pitch = glm.clamp(self.pitch, -PITCH_MAX, PITCH_MAX)
+
+
+    def rotate_yaw(self, delta_x):
+        # Modifie l&#x27;angle horizontal (yaw) selon le mouvement de la souris
+        self.yaw += delta_x
+
+
+    def move_left(self, velocity):
+        # Déplace la caméra vers la gauche (strafe)
+        self.position -= self.right * velocity
+
+
+    def move_right(self, velocity):
+        # Déplace la caméra vers la droite (strafe)
+        self.position += self.right * velocity
+
+
+    def move_up(self, velocity):
+        # Déplace la caméra vers le haut
+        self.position += self.up * velocity
+
+
+    def move_down(self, velocity):
+        # Déplace la caméra vers le bas
+        self.position -= self.up * velocity
+
+
+    def move_forward(self, velocity):
+        # Avance dans la direction actuelle de la caméra
+        self.position += self.forward * velocity
+
+
+    def move_back(self, velocity):
+        # Recule dans la direction opposée à la vue
+        self.position -= self.forward * velocity</code></pre><h2 id="1ecc1020-0b61-8086-95c0-eead60daab9f" class="">📷 Modèle mathématique de la caméra 3D</h2><h3 id="1ecc1020-0b61-8030-973f-f8ad064880a1" class="">1. Position et angles</h3><p id="1ecc1020-0b61-80f6-a68c-de4426c269da" class="">La position de la caméra est définie dans l’espace 3D par un vecteur.</p><p id="1ecc1020-0b61-80eb-a43d-e3c0fb00b83a" class="">Son orientation est donnée par deux angles d’Euler : yaw (horizontal) et pitch (vertical).</p><figure id="1ecc1020-0b61-80de-af8a-ef1bcacbf792" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>x</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>y</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>z</mi></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mn>3</mn></msup><mspace linebreak="newline"></mspace><mtext>Yaw</mtext><mo>=</mo><mi>θ</mi><mo separator="true">,</mo><mspace width="1em"/><mtext>Pitch</mtext><mo>=</mo><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\vec{P} = \begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \mathbb{R}^3 \\ \text{Yaw} = \theta, \quad \text{Pitch} = \phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
+H403z M403 1759 V0 H319 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
+M347 1759 V0 H263 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">Yaw</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">Pitch</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">ϕ</span></span></span></span></span></div></figure><h3 id="1ecc1020-0b61-8005-86b4-c5664ab36822" class="">2. Vecteurs directionnels</h3><p id="1ecc1020-0b61-80e5-ba45-e58346979ea1" class="">Ces vecteurs définissent dans quelle direction la caméra regarde (<code>forward</code>), sa droite (<code>right</code>) et le haut (<code>up</code>).</p><figure id="1ecc1020-0b61-804d-8381-fc4b6ca49c46" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mspace linebreak="newline"></mspace><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mo>=</mo><mfrac><mrow><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mo>×</mo><msub><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mrow><mi>w</mi><mi>o</mi><mi>r</mi><mi>l</mi><mi>d</mi></mrow></msub></mrow><mrow><mi mathvariant="normal">∥</mi><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mo>×</mo><msub><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mrow><mi>w</mi><mi>o</mi><mi>r</mi><mi>l</mi><mi>d</mi></mrow></msub><mi mathvariant="normal">∥</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"/><msub><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mrow><mi>w</mi><mi>o</mi><mi>r</mi><mi>l</mi><mi>d</mi></mrow></msub><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mspace linebreak="newline"></mspace><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mo>=</mo><mfrac><mrow><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mi>F</mi><mo>⃗</mo></mover></mrow><mrow><mi mathvariant="normal">∥</mi><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mi mathvariant="normal">∥</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\vec{F} = \begin{bmatrix}\cos(\theta)\cos(\phi) \\\sin(\phi) \\\sin(\theta)\cos(\phi)\end{bmatrix} \\ \vec{R} = \frac{\vec{F} \times \vec{U}_{world}}{\|\vec{F} \times \vec{U}_{world}\|}, \quad \vec{U}_{world} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \\ \vec{U} = \frac{\vec{R} \times \vec{F}}{\|\vec{R} \times \vec{F}\|}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
+H403z M403 1759 V0 H319 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
+M347 1759 V0 H263 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.7497em;vertical-align:-1.1063em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6433em;"><span style="top:-2.1437em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∥</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">or</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∥</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">or</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1063em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">or</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
+H403z M403 1759 V0 H319 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.81em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.667em' height='3.600em' viewBox='0 0 667 3600'><path d='M347 1759 V0 H0 V84 H263 V1759 v0 v1759 H0 v84 H347z
+M347 1759 V0 H263 V1759 v0 v1759 h84z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.7497em;vertical-align:-1.1063em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6433em;"><span style="top:-2.1437em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∥</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mord">∥</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1063em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><h3 id="1ecc1020-0b61-802e-8ce2-d4c38d3bce8c" class="">3. Matrice de vue</h3><p id="1ecc1020-0b61-8038-8e73-ce2963fee5e1" class="">La matrice de vue transforme les coordonnées du monde vers l’espace caméra.</p><figure id="1ecc1020-0b61-806d-9e24-eb42c057c580" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>View</mtext><mo>=</mo><mtext>lookAt</mtext><mo stretchy="false">(</mo><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>+</mo><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{View} = \text{lookAt}(\vec{P}, \vec{P} + \vec{F}, \vec{U})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">View</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2163em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">lookAt</span></span><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2163em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></div></figure><h3 id="1ecc1020-0b61-80f8-8e79-c2c47bbc4943" class="">4. Matrice de projection</h3><p id="1ecc1020-0b61-8087-bd0a-c4102ea9d520" class="">La projection perspective donne l’effet de profondeur (champ de vision, distances proches et lointaines).</p><figure id="1ecc1020-0b61-80b9-a083-f0e8a3a82d3e" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Proj</mtext><mo>=</mo><mtext>perspective</mtext><mo stretchy="false">(</mo><mi>f</mi><mi>o</mi><mi>v</mi><mo separator="true">,</mo><mtext>aspect</mtext><mo separator="true">,</mo><mtext>near</mtext><mo separator="true">,</mo><mtext>far</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{Proj} = \text{perspective}(fov, \text{aspect}, \text{near}, \text{far})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Proj</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">perspective</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">aspect</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">near</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">far</span></span><span class="mclose">)</span></span></span></span></span></div></figure><h3 id="1ecc1020-0b61-800f-9ef3-dea5a5829881" class="">5. Déplacements</h3><p id="1ecc1020-0b61-80ac-abd4-cfda1aa86ab0" class="">Le déplacement est fait par addition ou soustraction des vecteurs directionnels à la position.</p><figure id="1ecc1020-0b61-80df-adde-c38afc6e2dab" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>←</mo><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>±</mo><mover accent="true"><mi>F</mi><mo>⃗</mo></mover><mo>⋅</mo><mi>v</mi><mspace linebreak="newline"></mspace><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>←</mo><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>±</mo><mover accent="true"><mi>R</mi><mo>⃗</mo></mover><mo>⋅</mo><mi>v</mi><mspace linebreak="newline"></mspace><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>←</mo><mover accent="true"><mi>P</mi><mo>⃗</mo></mover><mo>±</mo><mover accent="true"><mi>U</mi><mo>⃗</mo></mover><mo>⋅</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">\vec{P} \leftarrow \vec{P} \pm \vec{F} \cdot v \\ \vec{P} \leftarrow \vec{P} \pm \vec{R} \cdot v \\ \vec{P} \leftarrow \vec{P} \pm \vec{U} \cdot v
+
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.0833em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">±</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.0833em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">±</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.0833em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1522em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">±</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></span></div></figure><h2 id="1ecc1020-0b61-8082-8bf8-e0586ca2393e" class="">Allons dans le fichier player :</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1ecc1020-0b61-8078-a2db-f99cbec4173a" class="code"><code class="language-Python">import pygame as pg
+from camera import Camera
+from settings import *
+
+class Player(Camera):
+    def __init__(self, app, position=PLAYER_POS, yaw=-90, pitch=0):
+        # Référence à l&#x27;application principale
+        self.app = app
+        # Initialisation de la classe parente Camera
+        super().__init__(position, yaw, pitch)
+
+    def update(self):
+        # Contrôle clavier et souris
+        self.keyboard_control()
+        self.mouse_control()
+        # Mise à jour des vecteurs et de la matrice vue
+        super().update()
+
+    def mouse_control(self):
+        # Récupère les déplacements de la souris depuis le dernier appel
+        mouse_dx, mouse_dy = pg.mouse.get_rel()
+        # Tourne autour de l’axe vertical si la souris a bougé horizontalement
+        if mouse_dx:
+            self.rotate_yaw(delta_x=mouse_dx * MOUSE_SENSITIVITY)
+        # Tourne autour de l’axe horizontal si la souris a bougé verticalement
+        if mouse_dy:
+            self.rotate_pitch(delta_y=mouse_dy * MOUSE_SENSITIVITY)
+
+    def keyboard_control(self):
+        # Récupère l’état actuel des touches clavier
+        key_state = pg.key.get_pressed()
+        # Vitesse de déplacement en fonction du temps entre frames
+        vel = PLAYER_SPEED * self.app.delta_time
+
+        # Contrôles directionnels
+        if key_state[pg.K_w]:
+            self.move_forward(vel)
+        if key_state[pg.K_s]:
+            self.move_back(vel)
+        if key_state[pg.K_d]:
+            self.move_right(vel)
+        if key_state[pg.K_a]:
+            self.move_left(vel)
+        if key_state[pg.K_q]:
+            self.move_up(vel)
+        if key_state[pg.K_e]:
+            self.move_down(vel)</code></pre><hr id="1ecc1020-0b61-806a-b109-f62d97e4afaa"/><h1 id="1ecc1020-0b61-8049-9209-dd20e235deb4" class=""><mark class="highlight-pink">BRAVO ! Le résultat devrais être le suivant :</mark></h1><figure id="1ecc1020-0b61-802d-9635-d276cfe3eb1f" class="image"><a href="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-07_210410.png"><img style="width:709.9874877929688px" src="Configuration%20initiale%201ebc10200b61802b9596d8c15423ec6c/Capture_dcran_2025-05-07_210410.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
