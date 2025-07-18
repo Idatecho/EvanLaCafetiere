@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cours de Français</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="229c1020-0b61-80a3-85ac-c6aff84458ad" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🇫🇷</span></div><h1 class="page-title">Cours de Français</h1><p class="page-description"></p></header><div class="page-body"><h1 id="231c1020-0b61-80f6-addc-d3407ab0a88e" class=""><mark class="highlight-blue">Préface :</mark></h1><p id="231c1020-0b61-8063-a89a-f3f7071c4c41" class="">Le français est une langue indo-européenne de la famille des langues romanes dont les locuteurs sont appelés « francophones ».</p><p id="231c1020-0b61-80b6-a977-ebc1c98800e7" class="">Il est la cinquième langue parlée au monde après l&#x27;anglais, le mandarin, le hindi, l&#x27;espagnol. Elle est également la deuxième langue apprise sur le globe et la troisième langue des affaires et du commerce. </p><p id="231c1020-0b61-8005-af58-dfd31c6d3c24" class="">Le français se classe deuxième parmi les langues étrangères les plus fréquemment enseignées à travers le monde. Il est également la quatrième langue utilisée sur Internet après l&#x27;espagnol, le mandarin et l&#x27;anglais, langue dont le vocabulaire a été fortement enrichi par le français.</p><p id="231c1020-0b61-8087-afa9-f35fbdeb6c53" class="">En 2025, <strong>144 millions</strong> de personnes s&#x27;instruisent en français dans le monde.</p><blockquote id="231c1020-0b61-80b0-8bab-ef39f2efc733" class=""><em><span style="border-bottom:0.05em solid">Le but de ces cours est de proposer différentes approches théoriques concernant la grammaire, le vocabulaire, l’orthographe, etc.</span></em></blockquote><hr id="231c1020-0b61-80c2-942c-dc8ac039774f"/><h1 id="231c1020-0b61-80b6-b500-c56503230b58" class=""><mark class="highlight-teal">1 La grammaire :</mark></h1><h2 id="231c1020-0b61-8087-af07-e455f2c16a6c" class=""><mark class="highlight-orange"><strong>Partie 1 : Les fondations</strong></mark></h2><h3 id="231c1020-0b61-80ca-bd6e-f648b3ed799c" class=""><strong>1. Les types de mots (ou classes grammaticales)</strong></h3><figure id="231c1020-0b61-8058-ad07-fa5f37969dd5" class="link-to-page"><a href="Le nom, le déterminant, l’adjectif.html">Le nom, le déterminant, l’adjectif</a></figure><figure id="231c1020-0b61-80da-abf2-de8f8edafc5e" class="link-to-page"><a href="Le pronom.html">Le pronom</a></figure><figure id="231c1020-0b61-8064-81d1-c49431da6f56" class="link-to-page"><a href="Le verbe.html">Le verbe</a></figure><figure id="231c1020-0b61-802e-aaca-d600807179d2" class="link-to-page"><a href="L’adverbe.html">L’adverbe</a></figure><figure id="231c1020-0b61-8020-9735-eda1a994ecec" class="link-to-page"><a href="La préposition, la conjonction, l’interjection.html">La préposition, la conjonction, l’interjection</a></figure><h3 id="231c1020-0b61-807d-b594-db9d90f5149b" class=""><strong>2. La structure de la phrase simple</strong></h3><figure id="231c1020-0b61-8082-ac26-f7862138b1c5" class="link-to-page"><a href="Sujet verbe compléments.html">Sujet / verbe / compléments</a></figure><figure id="231c1020-0b61-80fc-af3c-dcec953ccc7c" class="link-to-page"><a href="Les types de phrases.html">Les types de phrases (déclarative, interrogative, impérative, exclamative)</a></figure><figure id="231c1020-0b61-80cc-b1e8-f47efd839388" class="link-to-page"><a href="Formes affirmative, négative, passive.html">Formes affirmative, négative, passive</a></figure><hr id="231c1020-0b61-8058-8621-c28b9a5af78c"/><h2 id="231c1020-0b61-80c3-8bab-ee34e2f5c9fa" class=""><mark class="highlight-orange"><strong>Partie 2 : Le verbe dans tous ses états</strong></mark></h2><h3 id="231c1020-0b61-8026-807d-f67110a76e6a" class=""><strong>1. Les temps verbaux</strong></h3><figure id="231c1020-0b61-8044-968f-ca38dc789aae" class="link-to-page"><a href="Présent, imparfait, passé composé, futur, plus.html">Présent, imparfait, passé composé, futur, plus-que-parfait, etc.</a></figure><figure id="231c1020-0b61-8055-b5a1-c5387eb2fc6e" class="link-to-page"><a href="Valeurs des temps.html">Valeurs des temps (durée, répétition, antériorité, etc.)</a></figure><h3 id="231c1020-0b61-8058-8b31-dfde0bf19d68" class=""><strong>2. Les modes verbaux</strong></h3><figure id="231c1020-0b61-805b-9d96-c4b064b70435" class="link-to-page"><a href="Indicatif, subjonctif, conditionnel, impératif.html">Indicatif, subjonctif, conditionnel, impératif</a></figure><figure id="231c1020-0b61-8056-b6dc-e4aa4ef52aa5" class="link-to-page"><a href="Infinitif, participe, gérondif.html">Infinitif, participe, gérondif</a></figure><h3 id="231c1020-0b61-8041-8b22-c27c390b0e09" class=""><strong>3. L’accord du verbe</strong></h3><figure id="231c1020-0b61-801f-b745-d09a8202a05a" class="link-to-page"><a href="Avec le sujet.html">Avec le sujet</a></figure><figure id="231c1020-0b61-801f-86c3-faba1b0eb503" class="link-to-page"><a href="Aux temps composés avec l’auxiliaire.html">Aux temps composés avec l’auxiliaire être ou avoir</a></figure><hr id="231c1020-0b61-80b5-94f2-d4504465565c"/><h2 id="231c1020-0b61-801f-9d15-d6c1c7d0c404" class=""><mark class="highlight-orange"><strong>Partie 3 : Les accords en tout genre</strong></mark></h2><h3 id="231c1020-0b61-8029-b878-c3717d4b11f5" class=""><strong>1. Accords dans le groupe nominal</strong></h3><figure id="231c1020-0b61-8068-8002-f00b9fa637cc" class="link-to-page"><a href="Accord de l’adjectif avec le nom.html">Accord de l’adjectif avec le nom</a></figure><figure id="231c1020-0b61-8034-a6ce-fe57d19e9c35" class="link-to-page"><a href="Accord du participe passé.html">Accord du participe passé (cas simples et particuliers)</a></figure><h3 id="231c1020-0b61-80e2-8ba6-e2df7d1a5045" class=""><strong>2. Accord sujet-verbe (révisions et cas particuliers)</strong></h3><figure id="231c1020-0b61-80ac-9fda-cce6b4b685d3" class="link-to-page"><a href="Sujet inversé, sujet collectif, sujets multiples.html">Sujet inversé, sujet collectif, sujets multiples</a></figure><hr id="231c1020-0b61-806a-ab37-f58daf55161e"/><h2 id="231c1020-0b61-80da-a626-d8ffe39116a8" class=""><mark class="highlight-orange"><strong>Partie 4 : Les subordonnées</strong></mark></h2><h3 id="231c1020-0b61-8053-9b91-dad089c9eee3" class=""><strong>1. Les différentes subordonnées</strong></h3><figure id="231c1020-0b61-80e4-a40c-d28b57268a6b" class="link-to-page"><a href="Relatives, conjonctives, circonstancielles.html">Relatives, conjonctives, circonstancielles</a></figure><h3 id="231c1020-0b61-8037-ac48-ebaedcee7580" class=""><strong>2. Les pronoms relatifs</strong></h3><figure id="231c1020-0b61-801e-92ff-daeaca912ea3" class="link-to-page"><a href="Qui, que, dont, où, lequel.html">Qui, que, dont, où, lequel...</a></figure><h3 id="231c1020-0b61-80cb-a479-e99bfca47e2b" class=""><strong>3. Syntaxe complexe</strong></h3><figure id="231c1020-0b61-8074-a27a-e14105e7a559" class="link-to-page"><a href="Coordination et subordination.html">Coordination et subordination</a></figure><figure id="231c1020-0b61-8060-8a0c-d473ad40771e" class="link-to-page"><a href="Ponctuation des phrases complexes.html">Ponctuation des phrases complexes</a></figure><hr id="231c1020-0b61-8013-a088-f4cc9b2c221b"/><h2 id="231c1020-0b61-80e7-b599-e7cc412b28a3" class=""><mark class="highlight-orange"><strong>Partie 5 : Les difficultés fréquentes</strong></mark></h2><h3 id="231c1020-0b61-8084-8086-ff733483e6c5" class=""><strong>1. Homophones et pièges</strong></h3><figure id="231c1020-0b61-8014-acae-fb9cf6373465" class="link-to-page"><a href="a à, et est, son sont, ce se, ou où….html">a/à, et/est, son/sont, ce/se, ou/où…</a></figure><figure id="231c1020-0b61-804c-b7b6-e95c6fef7cb6" class="link-to-page"><a href="Confusions fréquentes.html">Confusions fréquentes (participe passé / infinitif, etc.)</a></figure><h3 id="231c1020-0b61-807c-a14d-f1faabb5f229" class=""><strong>2. Orthographe grammaticale</strong></h3><figure id="231c1020-0b61-8029-9504-c73a66c3b1bf" class="link-to-page"><a href="Terminaisons verbales.html">Terminaisons verbales</a></figure><figure id="231c1020-0b61-80c7-96cf-d68a8446bf7d" class="link-to-page"><a href="Pluriels particuliers.html">Pluriels particuliers</a></figure><figure id="231c1020-0b61-808e-9611-e82e9a994bc9" class="link-to-page"><a href="Accord des couleurs.html">Accord des couleurs</a></figure><hr id="231c1020-0b61-802d-bee7-cfef3c0431b3"/><h2 id="231c1020-0b61-8078-a1e5-d368f3636f2a" class=""><mark class="highlight-orange"><strong>Partie 6 : Grammaire d’usage et stylistique</strong></mark></h2><h3 id="231c1020-0b61-80eb-8583-cd58578defb4" class=""><strong>1. Emploi correct des temps selon les contextes</strong></h3><h3 id="231c1020-0b61-806b-838e-c895960cf77d" class=""><strong>2. Grammaire et style</strong></h3><figure id="231c1020-0b61-80d8-aca1-ce54fc4b8479" class="link-to-page"><a href="Allègement des phrases, rythme, emphase.html">Allègement des phrases, rythme, emphase</a></figure><figure id="231c1020-0b61-8026-a5df-e01daba4548c" class="link-to-page"><a href="L’usage soutenu vs familier.html">L’usage soutenu vs familier</a></figure><p id="231c1020-0b61-80ad-a927-ecc8c6c7e02a" class="">
+</p><h1 id="231c1020-0b61-80ba-9334-ea44949d0e79" class=""><mark class="highlight-teal">2 L’orthographe :</mark></h1><p id="231c1020-0b61-8031-b3f3-fb4daf981802" class="">
+</p><h1 id="231c1020-0b61-805a-b6af-fec25947a7b2" class=""><mark class="highlight-teal">3 Le vocabulaire :</mark></h1><p id="232c1020-0b61-807e-ba8e-d4c1f615f450" class="">
+</p><h1 id="232c1020-0b61-80b1-8bf8-eac538749580" class=""><mark class="highlight-teal">4 Analyses de phrases :</mark></h1><h3 id="232c1020-0b61-807c-9c08-e2572155c094" class="">gwfh</h3><figure id="232c1020-0b61-8000-8e33-dea9fa09ad80" class="link-to-page"><a href="La pensée.html"> La pensée.</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

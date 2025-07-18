@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title> La pensée.</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="232c1020-0b61-8000-8e33-dea9fa09ad80" class="page sans"><header><h1 class="page-title"> La pensée.</h1><p class="page-description"></p></header><div class="page-body"><blockquote id="232c1020-0b61-80a0-986c-dce79db74af1" class="">« La pensée trouble l&#x27;absence de pensée, et l’inquiétude dérange l’inertie. » — (attribuée à Hegel, mais probablement apocryphe)</blockquote><p id="232c1020-0b61-8054-afbb-f3dcf7be9ed9" class="">Elle semble être une tentative de citation attribuée à <strong>Georg Wilhelm Friedrich Hegel</strong>, philosophe allemand (1770–1831).</p><p id="232c1020-0b61-8099-9c0b-eadaae2247ec" class="">Il n’existe <strong>aucune trace officielle</strong> de cette phrase dans les écrits de Hegel. Il est possible qu’il s’agisse d’une reformulation contemporaine inspirée de sa philosophie. Mais cela n’empêche pas de l’analyser en profondeur.</p><hr id="232c1020-0b61-80e3-9c1b-e86646a4541e"/><h2 id="232c1020-0b61-80fa-8987-d9baf8ed0c6e" class="">1. Analyse grammaticale détaillée</h2><p id="232c1020-0b61-801d-ae93-daad833153bc" class="">Nous pouvons découper cette phrase <strong>en deux propositions coordonnées</strong> :</p><blockquote id="232c1020-0b61-802d-858c-c1b01de94794" class="">(1) La pensée trouble l’absence de pensée<p id="232c1020-0b61-80d0-98fc-efcb230bd7fa" class="">(2) et l’inquiétude dérange l’inertie</p></blockquote><hr id="232c1020-0b61-8061-b6f1-c10a3b4e5ac7"/><h3 id="232c1020-0b61-80f9-800c-e48c34598a30" class="">1.1. <strong>Analyse morphosyntaxique de la première proposition</strong></h3><blockquote id="232c1020-0b61-8027-8477-fbdb02a4a210" class="">« La pensée trouble l’absence de pensée »</blockquote><h3 id="232c1020-0b61-80c1-aa51-fe3ed4f67062" class="">➤ <strong>Syntagme nominal sujet</strong> : « La pensée »</h3><ul id="232c1020-0b61-80cf-aa71-f4b3ae6ae535" class="bulleted-list"><li style="list-style-type:disc"><strong>Déterminant défini</strong> : <em>la</em> → article défini, genre féminin singulier</li></ul><ul id="232c1020-0b61-806d-aed8-c2ee169b41d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Nom commun</strong> : <em>pensée</em> → nom abstrait, féminin singulier, formé sur le verbe <em>penser</em> (forme substantivée en -ée)</li></ul><p id="232c1020-0b61-8002-b937-ddc2bb0102a4" class="">→ Il s’agit d’un <strong>syntagme nominal sujet</strong>, occupant la fonction <strong>de sujet du verbe &quot;trouble&quot;</strong>.</p><h3 id="232c1020-0b61-80f2-9e9c-c6d59d3f0ea4" class="">➤ <strong>Verbe</strong> : <em>trouble</em></h3><ul id="232c1020-0b61-80e9-97db-ec2e6b673a4d" class="bulleted-list"><li style="list-style-type:disc"><strong>Forme verbale</strong> : <em>trouble</em>, présent de l’indicatif, 3e personne du singulier</li></ul><ul id="232c1020-0b61-80a8-95ba-fdc3b2fbd798" class="bulleted-list"><li style="list-style-type:disc"><strong>Verbe transitif direct</strong> → appelle un <strong>complément d’objet direct (COD)</strong></li></ul><h3 id="232c1020-0b61-80fe-b573-c0526b9ff1af" class="">➤ <strong>COD</strong> : « l’absence de pensée »</h3><ul id="232c1020-0b61-8013-b6d4-e76b90ce62bc" class="bulleted-list"><li style="list-style-type:disc"><strong>Déterminant défini élidé</strong> : <em>l’</em></li></ul><ul id="232c1020-0b61-8027-becd-d1b99b5aa67d" class="bulleted-list"><li style="list-style-type:disc"><strong>Nom commun</strong> : <em>absence</em> → féminin singulier, nom abstrait</li></ul><ul id="232c1020-0b61-80a5-b1f4-ced63995cbb2" class="bulleted-list"><li style="list-style-type:disc"><strong>Complément du nom</strong> : <em>de pensée</em> → groupe prépositionnel introduit par <em>de</em> ; <em>pensée</em> est ici à nouveau un <strong>nom abstrait</strong>, dans une construction génitivale</li></ul><p id="232c1020-0b61-805c-9d7c-cfa45751105b" class="">→ « l’absence de pensée » est un <strong>syntagme nominal complexe</strong> à structure déterminant + nom + complément du nom.</p><hr id="232c1020-0b61-8021-9961-e1ebae65efb5"/><h3 id="232c1020-0b61-807d-a4ae-fd2b679ffd70" class="">1.2. <strong>Analyse morphosyntaxique de la seconde proposition</strong></h3><blockquote id="232c1020-0b61-8063-8615-eb681459ad46" class="">« et l’inquiétude dérange l’inertie »</blockquote><h3 id="232c1020-0b61-801a-83d3-c6a87782495f" class="">➤ <strong>Conjonction de coordination</strong> : <em>et</em></h3><ul id="232c1020-0b61-809f-a73a-e1fb78a5b083" class="bulleted-list"><li style="list-style-type:disc">Coordonne deux propositions indépendantes</li></ul><h3 id="232c1020-0b61-8014-b54a-ca805ea6445a" class="">➤ <strong>Syntagme nominal sujet</strong> : <em>l’inquiétude</em></h3><ul id="232c1020-0b61-8030-8c28-fdfd5a2397e0" class="bulleted-list"><li style="list-style-type:disc"><strong>Déterminant défini élidé</strong> : <em>l’</em></li></ul><ul id="232c1020-0b61-8012-ad6d-c6314e56293f" class="bulleted-list"><li style="list-style-type:disc"><strong>Nom commun</strong> : <em>inquiétude</em> → féminin singulier, dérivé du verbe <em>inquiéter</em> (substantivation en -ude)</li></ul><h3 id="232c1020-0b61-80cc-a73c-c41f3c8bf079" class="">➤ <strong>Verbe</strong> : <em>dérange</em></h3><ul id="232c1020-0b61-804a-9197-e27d977156e5" class="bulleted-list"><li style="list-style-type:disc"><strong>Présent de l’indicatif</strong>, 3e pers. du singulier</li></ul><ul id="232c1020-0b61-80a3-b601-f78b67483f5c" class="bulleted-list"><li style="list-style-type:disc">Verbe transitif direct</li></ul><h3 id="232c1020-0b61-80eb-9f86-cb8c1929b4c2" class="">➤ <strong>COD</strong> : <em>l’inertie</em></h3><ul id="232c1020-0b61-8088-9fab-e9c475f19f44" class="bulleted-list"><li style="list-style-type:disc"><strong>Déterminant défini élidé</strong> : <em>l’</em></li></ul><ul id="232c1020-0b61-8043-9dfb-e2c311c64400" class="bulleted-list"><li style="list-style-type:disc"><strong>Nom commun</strong> : <em>inertie</em> → nom abstrait, féminin singulier</li></ul><hr id="232c1020-0b61-8048-a2f8-d9dd43d5d489"/><h2 id="232c1020-0b61-8097-b406-f641a560a5d4" class="">🔍 2. <strong>Analyse sémantique (sens des mots et des relations)</strong></h2><table id="232c1020-0b61-80f7-958c-c70dc9d749ad" class="simple-table"><thead class="simple-table-header"><tr id="232c1020-0b61-80ab-a308-fe2245b89988"><th id="|@lw" class="simple-table-header-color simple-table-header">Mot</th><th id="hnPA" class="simple-table-header-color simple-table-header" style="width:610px">Sens fondamental</th></tr></thead><tbody><tr id="232c1020-0b61-8067-bb2a-f037332cc0f2"><td id="|@lw" class="">pensée</td><td id="hnPA" class="" style="width:610px">Activité intellectuelle consciente, usage de la raison</td></tr><tr id="232c1020-0b61-8074-ae90-ef01f8a91615"><td id="|@lw" class="">trouble</td><td id="hnPA" class="" style="width:610px">Perturbe l’ordre établi, introduit un mouvement dans quelque chose de stable</td></tr><tr id="232c1020-0b61-80f6-8269-e37a8f917454"><td id="|@lw" class="">absence</td><td id="hnPA" class="" style="width:610px">Fait de ne pas être là, de ne pas être présent</td></tr><tr id="232c1020-0b61-80b4-b26b-fc86ee3f454d"><td id="|@lw" class="">inquiétude</td><td id="hnPA" class="" style="width:610px">État d’instabilité psychique liée à la peur ou à l’attente</td></tr><tr id="232c1020-0b61-8010-9627-d0600b50056b"><td id="|@lw" class="">dérange</td><td id="hnPA" class="" style="width:610px">Modifie un ordre, rompt une stabilité</td></tr><tr id="232c1020-0b61-809d-b9c4-f4136fd69db2"><td id="|@lw" class="">inertie</td><td id="hnPA" class="" style="width:610px">En physique : tendance à rester immobile ; au figuré : stagnation, passivité</td></tr></tbody></table><h3 id="232c1020-0b61-80b1-b5ea-f6dccfa5c5a4" class="">➤ Interprétation globale</h3><ul id="232c1020-0b61-8095-93b3-f52b5ab87e31" class="bulleted-list"><li style="list-style-type:disc"><strong>La pensée trouble l’absence de pensée</strong> :<p id="232c1020-0b61-8000-b460-d0b9115891f3" class="">→ L’acte même de penser empêche l’absence de pensée ; penser est incompatible avec le vide de la pensée.</p><p id="232c1020-0b61-80f4-850c-c93b3f99f52e" class="">→ <em>Métaphysiquement</em>, cela pose l’idée que <strong>penser</strong> est une force <strong>perturbatrice</strong> du <strong>néant</strong>, ou du <strong>vide intérieur</strong>.</p></li></ul><ul id="232c1020-0b61-80aa-a866-dd39749ab64f" class="bulleted-list"><li style="list-style-type:disc"><strong>L’inquiétude dérange l’inertie</strong> :<p id="232c1020-0b61-8003-9b96-d4967093c699" class="">→ L’inquiétude (mouvement intérieur) s’oppose à l’inertie (immobilité mentale ou morale).</p><p id="232c1020-0b61-806b-9baf-d71d30b6bdd4" class="">→ Cela établit une analogie entre pensée/inquiétude d’un côté et absence/inertie de l’autre : les premières <strong>bousculent</strong> les secondes.</p></li></ul><hr id="232c1020-0b61-801a-9b75-f34df583cc0d"/><h2 id="232c1020-0b61-809f-9f5a-ffdd15f8b677" class="">3. Analyse philosophique et conceptuelle</h2><h3 id="232c1020-0b61-8013-884a-fbb5a2ee626c" class="">➤ <strong>Pensée vs absence de pensée</strong></h3><ul id="232c1020-0b61-808e-9573-f2affb475365" class="bulleted-list"><li style="list-style-type:disc"><strong>La pensée</strong> n’est pas simplement un processus mental : ici, elle est <strong>force</strong>, <strong>événement</strong>, <strong>rupture</strong>.</li></ul><ul id="232c1020-0b61-8079-9dff-e8abb1c2b689" class="bulleted-list"><li style="list-style-type:disc">Hegel voit la pensée comme <strong>dialectique</strong>, c’est-à-dire toujours en tension avec une négation (l&#x27;absence de pensée).</li></ul><ul id="232c1020-0b61-8026-bccd-f8d419c9bfd2" class="bulleted-list"><li style="list-style-type:disc">Ce segment évoque une opposition ontologique : <strong>être vs néant</strong>, <strong>conscience vs vacuité</strong>.</li></ul><h3 id="232c1020-0b61-8082-85c9-f6acdb39b9df" class="">➤ <strong>Inquiétude vs inertie</strong></h3><ul id="232c1020-0b61-8038-a5b5-c7a30c06be8b" class="bulleted-list"><li style="list-style-type:disc">L’inquiétude chez Hegel peut être vue comme une <strong>mouvance dialectique de l’esprit</strong>, insatisfaction motrice du devenir.</li></ul><ul id="232c1020-0b61-80da-b068-e6c6c65835b1" class="bulleted-list"><li style="list-style-type:disc">L’inertie, à l’inverse, est le <strong>repos figé</strong>, l’<strong>immobilité d’un état sans conscience de soi</strong>.</li></ul><hr id="232c1020-0b61-806b-a0a4-c946b6c20ae5"/><h2 id="232c1020-0b61-805a-b508-f6a8713e24ee" class="">4. Analyse stylistique</h2><h3 id="232c1020-0b61-808f-8f1c-c685697aa1df" class="">➤ Figures de style :</h3><ul id="232c1020-0b61-8018-8945-da11979969d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Parallélisme de construction</strong> :<p id="232c1020-0b61-8036-8dd5-d0ffe5c2b2aa" class=""><em>« La pensée trouble l’absence de pensée, et l’inquiétude dérange l’inertie »</em> → même structure syntaxique répétée : [sujet – verbe – COD].</p></li></ul><ul id="232c1020-0b61-809d-a734-d96d17f6d42a" class="bulleted-list"><li style="list-style-type:disc"><strong>Chiasme sémantique implicite</strong> :<p id="232c1020-0b61-807f-aa1f-d2fc79560671" class="">Bien que non inversé grammaticalement, on observe un renversement sémantique :</p><blockquote id="232c1020-0b61-809c-88d6-c130124bcbd0" class="">pensée/inquiétude → absence/inertie<p id="232c1020-0b61-801c-940f-e7c08c7bd789" class="">Soit [conscience active] vs [état passif ou vide]</p></blockquote></li></ul><ul id="232c1020-0b61-80ac-8b5c-ce1f743fa5be" class="bulleted-list"><li style="list-style-type:disc"><strong>Redondance sémantique évocatrice</strong> :<p id="232c1020-0b61-8036-8c3b-c88c1590c2a6" class="">Le mot <em>pensée</em> est repris deux fois dans la première proposition, ce qui souligne la tension entre elle et son absence.</p></li></ul><hr id="232c1020-0b61-80c0-b4e4-e289bd9216e4"/><h2 id="232c1020-0b61-80dc-9651-e902eae89014" class="">5. Analyse linguistique avancée</h2><h3 id="232c1020-0b61-8027-984d-d6f97a4b569c" class="">➤ Catégories grammaticales :</h3><table id="232c1020-0b61-80a5-a6b0-ddd5f33c4878" class="simple-table"><thead class="simple-table-header"><tr id="232c1020-0b61-80e5-8db7-f20315cd1702"><th id="TU~\" class="simple-table-header-color simple-table-header">Élément</th><th id="uu`Q" class="simple-table-header-color simple-table-header">Nature grammaticale</th><th id="Fg&lt;I" class="simple-table-header-color simple-table-header" style="width:357.9250030517578px">Fonction</th></tr></thead><tbody><tr id="232c1020-0b61-809a-893d-e3c0ab42f7b5"><td id="TU~\" class="">La pensée</td><td id="uu`Q" class="">Déterminant + nom</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Sujet</td></tr><tr id="232c1020-0b61-8083-81b4-f72f9a3d15d2"><td id="TU~\" class="">trouble</td><td id="uu`Q" class="">Verbe transitif</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Verbe (prédicat)</td></tr><tr id="232c1020-0b61-807d-a6db-df20bde236d6"><td id="TU~\" class="">l’absence</td><td id="uu`Q" class="">Déterminant + nom</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">COD</td></tr><tr id="232c1020-0b61-80f1-a195-e5c146f8059f"><td id="TU~\" class="">de pensée</td><td id="uu`Q" class="">Préposition + nom</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Complément du nom</td></tr><tr id="232c1020-0b61-80b4-8e7f-e5ca897fc091"><td id="TU~\" class="">et</td><td id="uu`Q" class="">Conjonction</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Coordination</td></tr><tr id="232c1020-0b61-80da-9b8f-c4483ee7f3a4"><td id="TU~\" class="">l’inquiétude</td><td id="uu`Q" class="">Déterminant + nom</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Sujet</td></tr><tr id="232c1020-0b61-8088-aeca-d389f3ae4a2d"><td id="TU~\" class="">dérange</td><td id="uu`Q" class="">Verbe transitif</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">Verbe (prédicat)</td></tr><tr id="232c1020-0b61-805a-bee0-e1affd6d5d2f"><td id="TU~\" class="">l’inertie</td><td id="uu`Q" class="">Déterminant + nom</td><td id="Fg&lt;I" class="" style="width:357.9250030517578px">COD</td></tr></tbody></table><h3 id="232c1020-0b61-80d5-80fe-fbfa95020ad9" class="">➤ Champs lexicaux :</h3><ul id="232c1020-0b61-80cb-8f01-c858beb1b2f0" class="bulleted-list"><li style="list-style-type:disc"><strong>Activité mentale</strong> : pensée, inquiétude</li></ul><ul id="232c1020-0b61-80e1-ae39-de9dc52b1208" class="bulleted-list"><li style="list-style-type:disc"><strong>Passivité / immobilité</strong> : absence, inertie<p id="232c1020-0b61-80ba-98b7-c4ac5a02a530" class="">→ Oppositions sémantiques centrales</p></li></ul><hr id="232c1020-0b61-8017-9db8-c56186fe5b30"/><h2 id="232c1020-0b61-80c4-9ce3-f6bad22be55c" class="">6. Analyse logique et dialectique (héritage hégélien)</h2><p id="232c1020-0b61-80d0-9648-f64310026c83" class="">Chez Hegel, tout est <strong>mouvement de l&#x27;Esprit</strong> :</p><ul id="232c1020-0b61-807b-91b1-f55996359a05" class="bulleted-list"><li style="list-style-type:disc">L’Esprit ne se connaît qu’à travers la <strong>négation</strong> de ce qui n’est pas lui.</li></ul><ul id="232c1020-0b61-8088-bd92-c765afb35305" class="bulleted-list"><li style="list-style-type:disc">La <strong>pensée</strong> apparaît donc comme <strong>rupture dans le néant</strong>, elle <strong>nie</strong> l’absence de pensée.</li></ul><ul id="232c1020-0b61-80b8-90af-d2439ac19f52" class="bulleted-list"><li style="list-style-type:disc">De même, l’<strong>inquiétude</strong> est un moteur qui <strong>nie l’inertie</strong>, et donc <strong>met en marche</strong> la conscience vers l’<strong>auto-réalisation</strong>.</li></ul><p id="232c1020-0b61-8054-917d-e9267966ddd0" class="">Ce double mouvement pourrait représenter les deux pôles de la dialectique :</p><ol type="1" id="232c1020-0b61-80d7-91a2-d30fb6787aa0" class="numbered-list" start="1"><li>affirmation (pensée / inquiétude)</li></ol><ol type="1" id="232c1020-0b61-80fd-99e2-cd56a763432f" class="numbered-list" start="2"><li>négation (absence / inertie)<p id="232c1020-0b61-808e-8a42-d8916878597d" class="">→ menant à une <strong>synthèse dynamique</strong> : l’Esprit qui se déploie à travers les contradictions internes.</p></li></ol><hr id="232c1020-0b61-80ba-bc32-ebd5dbba83a1"/><h2 id="232c1020-0b61-805e-9aca-ec2ce6b369f4" class="">7. Perspective extralinguistique</h2><h3 id="232c1020-0b61-809a-b50e-d338f62e43c1" class="">➤ Contexte historique</h3><ul id="232c1020-0b61-80da-be07-ca03e158b938" class="bulleted-list"><li style="list-style-type:disc">Hegel écrit à l&#x27;époque du <strong>romantisme allemand</strong>, mais dans une veine idéaliste systématique.</li></ul><ul id="232c1020-0b61-803f-a531-f6d005eab80d" class="bulleted-list"><li style="list-style-type:disc">Il s’oppose à l’idée de la pensée comme contemplation figée : pour lui, penser, c’est transformer, c’est entrer dans un processus.</li></ul><h3 id="232c1020-0b61-80ee-a7e4-e8ee24a6db74" class="">➤ Portée contemporaine</h3><ul id="232c1020-0b61-800f-b510-fc298bc3bcd4" class="bulleted-list"><li style="list-style-type:disc">Cette phrase évoque aussi les tensions modernes :<p id="232c1020-0b61-809a-8229-d74191f92176" class="">→ <strong>pensée critique</strong> vs <strong>abandon au divertissement vide</strong></p><p id="232c1020-0b61-8052-a4bb-d7a2aadc44fd" class="">→ <strong>angoisse existentielle</strong> vs <strong>apathie moderne</strong></p></li></ul><hr id="232c1020-0b61-802c-95b5-ff69ef288819"/><h2 id="232c1020-0b61-80b3-8d1e-e5affa03876c" class="">Conclusion : Résumé</h2><p id="232c1020-0b61-808d-9044-ed66dcd9ef6d" class=""><strong>« La pensée trouble l’absence de pensée, et l’inquiétude dérange l’inertie »</strong> est une phrase hautement symbolique, construite sur des oppositions binaires syntaxiques et conceptuelles.</p><p id="232c1020-0b61-8033-b9e7-fb6ad109274d" class="">Elle mobilise un <strong>vocabulaire abstrait</strong>, une <strong>structure rigoureuse</strong>, et fait écho à une <strong>vision dialectique du réel</strong> héritée de Hegel : penser et être inquiet, c’est <strong>perturber un ordre figé</strong>, <strong>faire surgir du mouvement</strong>, et donc <strong>exister pleinement</strong>.</p><p id="232c1020-0b61-8018-86f0-c65fcbde349c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

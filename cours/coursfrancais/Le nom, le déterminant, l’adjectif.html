@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Le nom, le déterminant, l’adjectif</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="231c1020-0b61-8058-ad07-fa5f37969dd5" class="page sans"><header><h1 class="page-title">Le nom, le déterminant, l’adjectif</h1><p class="page-description"></p></header><div class="page-body"><h1 id="232c1020-0b61-8088-8561-cd397ce49ec4" class=""><mark class="highlight-purple">a) Le nom</mark></h1><h2 id="232c1020-0b61-8084-80db-cb25d3014177" class=""><mark class="highlight-orange"><span style="border-bottom:0.05em solid">Introduction :</span></mark></h2><p id="232c1020-0b61-80f2-b970-df28cc8c5441" class="">En grammaire <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, le <strong>nom</strong>, également appelé <strong>substantif</strong>, est une des principales natures <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> de mots dans lesquelles se classent les lemmes <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> (unités autonomes du lexique <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>) d&#x27;une langue.<br/> Les noms forment une classe ouverte qui peut librement s&#x27;enrichir de nouveaux mots. Comme les autres natures de mots, le nom peut être défini à la fois sur des critères sémantiques <br/><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, morphologiques <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> et syntaxiques <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, à des degrés divers suivant les langues et les théories linguistiques <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">^8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>.</p><p id="232c1020-0b61-80f6-b6dd-f8bb8c3b6cf3" class="">D&#x27;un point de vue sémantique, les noms désignent le plus typiquement des entités <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> en soi, indépendamment de la temporalité. Il peut s&#x27;agir d&#x27;êtres (<em>fille</em>, <em>maçon</em>, <em>chat</em>, <em>arbre</em>...), de choses (<em>maison</em>, <em>pierre</em>, <em>feu</em>, <em>livre</em>...), de sensations (<em>lumière</em>, <em>peur</em>, <em>musique</em>, <em>goût</em>...), de notions (<em>force</em>, <em>idée</em>, <em>âge</em>, <em>style</em>...), etc.</p><p id="232c1020-0b61-803a-a4f2-c314d9498ed2" class="">L&#x27;opération de dérivation lexicale qui consiste à transformer en nom un lemme d&#x27;une autre nature s&#x27;appelle la <em>nominalisation</em> ou <em>substantivation </em><em><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>10</mn></msup></mrow><annotation encoding="application/x-tex">^{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></em>. Une dérivation qui part d&#x27;un nom produit à son tour un <em>dénominal</em> <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">^{11}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">11</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>ou <em>dénominatif</em>.</p><h2 id="232c1020-0b61-800a-951e-e2695e01d3c7" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Fonction référentielle du nom :</span></strong></mark></h2><p id="232c1020-0b61-80bd-92d2-fcf797e81561" class="">À l&#x27;instar des autres mots pleins <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">^{12}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> (adjectif, verbe et adverbe), le nom produit du sens, mais c&#x27;est en outre la seule catégorie (à l&#x27;exception toutefois de certains pronoms et de certains adverbes) à pouvoir être associée à un référent (ou référence), c&#x27;est-à-dire, à un objet de la réalité extralinguistique <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>13</mn></msup></mrow><annotation encoding="application/x-tex">^{13}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">13</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>.</p><p id="232c1020-0b61-8052-9bee-ddaeb9868427" class="">C&#x27;est pour cette raison que le nom est également appelé <em>substantif</em>, puisqu&#x27;il désigne la substance <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>14</mn></msup></mrow><annotation encoding="application/x-tex">^{14}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">14</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span><br/> des personnes, des animaux, des choses, mais également, des idées, des <br/>sentiments, des qualités, des actions, etc. à laquelle le discours fait référence.<br/></p><h2 id="232c1020-0b61-8098-9215-fa2e04421abf" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Actualisation du nom</span></strong></mark></h2><p id="232c1020-0b61-8019-b767-d83ea085aa9f" class="">Pour que la fonction référentielle du nom soit effective, il faut généralement que le nom soit actualisé par un déterminant, faute de quoi, il reste <em>virtuel</em>. Tel est le cas, par exemple, des noms se trouvant dans le dictionnaire. Les linguistes ont d&#x27;ailleurs coutume de dire à ce propos « <em>qu&#x27;il n&#x27;y a pas de référent dans le dictionnaire</em> ».</p><p id="232c1020-0b61-8075-9fd0-cce7b12fd5db" class="">Analysons par exemple le statut du nom « <em>biscuit</em> » dans les deux syntagmes <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>15</mn></msup></mrow><annotation encoding="application/x-tex">^{15}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">15</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>suivants, « <em>une boîte à biscuits</em> » et « <em>une boîte pour mes biscuits</em> ». Ce nom est <em>virtuel</em> dans le premier syntagme : en effet, le nom « <em>biscuit</em> »<br/> ne possédant pas de déterminant, on ne peut donc l&#x27;identifier puisqu&#x27;il<br/> n&#x27;a pas de référent propre. Au contraire, ce même nom est <br/><em>actuel</em> dans le second syntagme : en effet, le nom « <em>biscuit</em> » étant alors précédé du déterminant « <em>mes</em> », on peut à présent l&#x27;identifier puisqu&#x27;il possède son référent propre, distinct de celui du nom « <em>boîte</em> » (par exemple, il s&#x27;agit peut-être des biscuits que j&#x27;ai achetés ce matin au supermarché…).</p><h2 id="232c1020-0b61-8028-a73a-ec42eea9f688" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms propres et noms communs</span></strong></mark></h2><p id="232c1020-0b61-8056-a207-e9e0bd14cfc5" class="">La plupart des langues distinguent le <em>nom commun</em> et le <em>nom propre</em>.</p><ul id="232c1020-0b61-80c8-b1b3-c357ca163ea9" class="bulleted-list"><li style="list-style-type:disc">Le nom commun peut s’appliquer à plusieurs entités distinctes. Il peut être doté d&#x27;une définition générale permettant de délimiter la classe d&#x27;entités auxquelles il fait référence. Dans la plupart des langues, il commence par une minuscule<br/>(sauf en début de phrase), mais il existe des exceptions telles que<br/>l&#x27;allemand, où les noms communs prennent également une majuscule.<br/></li></ul><ul id="232c1020-0b61-8005-9ab3-fdc7aa2777c0" class="bulleted-list"><li style="list-style-type:disc">Le nom propre fait référence à une entité spécifique, généralement unique, et n&#x27;a pas d&#x27;autre signification que de la désigner en soi : <em>Bruxelles</em>, <em>Napoléon Ier</em>, <em>Ottawa</em>, <em>la tour Eiffel</em>, <em>Carmen</em>, <em>l&#x27;Atlantique</em>, <em>Rome</em>… Il s&#x27;écrit avec une majuscule.</li></ul><p id="232c1020-0b61-80f2-9c36-dd95ce41329f" class="">La figure de style <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> appelée <span style="border-bottom:0.05em solid">antonomase</span> permet d&#x27;employer des noms propres comme des noms communs, ou, à l&#x27;inverse, des noms communs pour des noms propres.</p><h2 id="232c1020-0b61-8028-b37b-c1217fd02099" class=""><mark class="highlight-orange"><span style="border-bottom:0.05em solid">Catégorisation en classes nominales</span></mark></h2><p id="232c1020-0b61-80cd-8485-e4cb141c4f25" class="">Les noms sont généralement catégorisés en fonction de critères <br/>sémantiques, syntaxiques ou morphologiques, et sont ainsi associés à des<br/> classes nominales.<br/> Il ressort de ces catégorisations un certain nombre d&#x27;oppositions, <br/>souvent canoniques : « noms masculins », « noms féminins » et « noms <br/>neutres », « noms massifs » et « noms comptables », « noms concrets » et<br/> « noms abstraits », « noms animés » et « noms inanimés », etc.<br/></p><h3 id="232c1020-0b61-80d9-88ef-f74c323d0983" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms masculins, féminins et neutres</span></strong></mark></h3><p id="232c1020-0b61-8007-bbb6-e7e225b151f3" class="">Certains noms peuvent avoir des propriétés liées au sexe de la réalité qu’ils représentent. Ils définissent alors un genre grammatical.<br/> Cependant, cette notion est surtout grammaticale. En effet, d’une part,<br/> la répartition des genres, masculin, féminin et neutre, ne correspond <br/>pas toujours à des critères sémantiques, et peut, de ce fait, être <br/>perçue comme arbitraire dans de nombreux cas. D’autre part, dans <br/>certaines langues, comme en polonais et en slovène,<br/> d’autres distinctions peuvent être prises en compte pour la définition <br/>des genres, si bien que la distinction entre « classe grammaticale » et <br/>« genre » est même parfois contestée.<br/></p><h2 id="232c1020-0b61-803c-b392-cf7c564701fc" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms massifs et noms comptables</span></strong></mark></h2><p id="232c1020-0b61-801e-b779-dbe22bdba187" class="">En français, certains noms communs, comme <em>lait</em> ou <em>acier</em>, s&#x27;utilisent le plus souvent au singulier, tandis que d’autres, comme <em>chat</em> et <em>ensemble</em>, s&#x27;utilisent aussi bien au singulier qu&#x27;au pluriel. De plus, les noms comme <em>lait</em> peuvent être précédés par les déterminants comme <em>du</em> et <em>un peu de</em>, mais plus difficilement par <em>chaque</em>, <em>des</em>, <em>plusieurs</em><br/> ou un nombre (sauf dans certains emplois, quand on veut parler de <br/>plusieurs types de laits, ou de commandes à un bar, par exemple). Les <br/>noms comme <br/><em>chat</em>, au contraire, peuvent être utilisés aussi bien avec les déterminants comme <em>des</em> ou <em>plusieurs</em> qu’avec les nombres ; mais ils sont plus difficilement combinables avec <em>du</em> ou <em>un peu de</em>. Ces noms ont été respectivement appelés noms massifs et noms comptables.</p><p id="232c1020-0b61-8038-ac17-ef029bb5d9bf" class="">Dans de nombreuses langues, notamment les langues romanes et <br/>germaniques, l’on peut de même identifier deux sous-classes <br/>morpho-syntaxiques de noms communs, celle des noms ayant un nombre <br/>grammatical invariable et celle des noms admettant le singulier et le <br/>pluriel.<br/></p><h3 id="232c1020-0b61-8022-a6d1-d6d4f1f540a4" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms concrets et noms abstraits</span></strong></mark></h3><p id="232c1020-0b61-80a6-be70-d36e090d99d3" class="">Un nom concret désigne toute substance pouvant être perçue par l&#x27;un de nos cinq sens (vue, ouïe, odorat, goût et toucher) : La maison, une fleur, le chat, un ami, l&#x27;odeur, une musique, la saveur, le froid…</p><p id="232c1020-0b61-804a-ac26-fbfdcbe786f5" class="">Un nom abstrait désigne toute substance réelle ou figurée qui ne tombe pas sous nos sens et que seules nos <em>facultés cérébrales</em> peuvent appréhender : l&#x27;habitat, une floraison, l&#x27;amitié, un courage, la sagesse, la musicalité, l&#x27;admiration…</p><h3 id="232c1020-0b61-8077-aa50-e435b45c8809" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms animés et noms inanimés</span></strong></mark></h3><p id="232c1020-0b61-80d4-99e1-d62cf9407d08" class="">Diverses langues distinguent grammaticalement les objets animés et <br/>inanimés. La distinction peut aussi s&#x27;opérer entre « humain » et « non <br/>humain ».<br/></p><p id="232c1020-0b61-8000-b889-de5dfb1a3ca3" class="">Un nom animé désigne un être vivant, humain, animal, ou assimilé, réel ou imaginaire. Seul un nom concret peut désigner un animé (personne, animal, être surnaturel, dieu…) : <br/>Charlemagne, un fermier, un renard, un lutin, une licorne, les lares, <br/>Neptune…<br/></p><p id="232c1020-0b61-8052-9d27-d7d118e5afcb" class="">Un nom inanimé désigne soit une chose concrète, soit une idée abstraite. Naturellement, les noms abstraits sont tous des inanimés : la paresse, la bonté, le courage, la course…</p><h3 id="232c1020-0b61-80a7-a6a5-e5de70add2a4" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms individuels et noms collectifs</span></strong></mark></h3><p id="232c1020-0b61-802b-94c8-d3d696cf49a1" class="">Un nom individuel désigne un référent unique : une personne, une brebis, la pierre, un euro, l&#x27;étoile, le client, un employé, un outil…</p><p id="232c1020-0b61-8066-b41b-d696aa7fd6bb" class="">Un nom collectif, quoique singulier, désigne un ensemble de référents : une foule, un groupe, un tas, un million, une infinité, la clientèle, le personnel, le mobilier…</p><p id="232c1020-0b61-8049-95ec-ed9db067e2a5" class="">Dans certains cas, un nom collectif employé avec un complément de nom, peut servir de déterminant indéfini, plus précisément, de quantificateur nominal : un troupeau de brebis.</p><p id="232c1020-0b61-8080-b7a5-f3930f7a8ad8" class="">Dans ce syntagme nominal, on peut considérer que le noyau est, soit le nom « troupeau », complété par « brebis » (complément de nom), soit le nom « brebis », déterminé par « un troupeau de », adjectif indéfini ou quantificateur. Selon le noyau pris en considération, l&#x27;accord du verbe sera modifié en conséquence : Une multitude d&#x27;oiseaux a traversé le ciel. / Une multitude d&#x27;oiseaux ont traversé le ciel.</p><h2 id="232c1020-0b61-808c-b1fb-dd7043a2e61c" class=""><mark class="highlight-orange"><span style="border-bottom:0.05em solid">Morphologie</span></mark></h2><h3 id="232c1020-0b61-8032-b215-fe13f3c3a511" class=""><mark class="highlight-orange"><span style="border-bottom:0.05em solid">Lexèmes nominaux et noms dérivés</span></mark></h3><p id="232c1020-0b61-8054-94e7-f23942ec5fa1" class="">Un nom peut être constitué uniquement d’un lexème, mais également, selon un procédé de formation des mots, à partir de mots de natures diverses, notamment par dérivation. Des noms peuvent ainsi être formés, par exemple : marché noir</p><ul id="232c1020-0b61-809a-8be6-c4f59952ec26" class="bulleted-list"><li style="list-style-type:disc">par conversion. Ils sont obtenus sans modification apparente du mot d’origine. Exemple : à partir des adjectifs de couleurs <em>bleu</em>, <em>jaune</em>, <em>rouge</em> sont formés des noms de couleurs : <em>le bleu</em>, <em>le jaune</em>, <em>le rouge</em>. Il s&#x27;agit alors d’une nominalisation ou substantivation ;</li></ul><ul id="232c1020-0b61-808e-8afe-f5179d6311e7" class="bulleted-list"><li style="list-style-type:disc">par construction. Ils sont obtenus par adjonction d’un affixe. Exemple de construction d’un nom par suffixation : l’adjectif <em>grand</em>, donne le nom ou substantif <em>grandeur</em> par adjonction du suffixe “<em>eur”</em> au radical <em>grand-</em> ;</li></ul><ul id="232c1020-0b61-802d-9aaa-c465d05d630d" class="bulleted-list"><li style="list-style-type:disc">par dérivation régressive ;</li></ul><ul id="232c1020-0b61-806e-b47d-c8be8a8838d9" class="bulleted-list"><li style="list-style-type:disc">par composition. Un nom composé est formé de plusieurs éléments, réunis ou non par des traits d&#x27;union ou des apostrophes : ce sont des ensembles nominaux fixes. On distingue<br/>les noms composés unifiés des noms composés dont les éléments sont reliés par des traits d&#x27;union ou apostrophes.<br/></li></ul><h3 id="232c1020-0b61-8093-9e20-d4fdfaac533a" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms simples et noms composés</span></strong></mark></h3><p id="232c1020-0b61-80e0-a00b-f6391c15593f" class="">Un nom simple, par opposition aux noms composés, obtenus par <br/>composition, est un nom constitué uniquement d’un item lexical ou bien <br/>dérivé d’un item lexical par un autre procédé que la composition (par <br/>exemple, par conversion ou par construction).<br/></p><p id="232c1020-0b61-8083-b893-f4ef771983e5" class="">Un nom composé peut être constitué de mots réunis au moyen de <br/>trait d&#x27;union ou d&#x27;apostrophe : abat-jour, arc-en-ciel, chef-d&#x27;œuvre, <br/>cure-dent, tout-à-l&#x27;égout, presqu&#x27;île…<br/></p><p id="232c1020-0b61-8074-9a8c-d29d7719fa84" class="">Un nom composé unifié est constitué de mots soudés (ou <br/>agglutinés), c&#x27;est-à-dire, réunis sans espace ni trait d&#x27;union : <br/>bonhomme, monsieur, passeport, portefeuille, contrevent, vaurien…<br/></p><h3 id="232c1020-0b61-8023-a5f6-cdb72d8918a2" class=""><mark class="highlight-orange"><strong><span style="border-bottom:0.05em solid">Noms fléchis</span></strong></mark></h3><p id="232c1020-0b61-80a9-997e-eb46ceddb64f" class="">Dans certaines langues, appelées langues flexionnelles, les noms peuvent comporter des marques de flexion. Les flexions des noms sont appelées déclinaisons. Chacune des formes fléchies du nom donne alors des indications diverses, selon les langues, sur leur cas, genre et nombre.</p><p id="232c1020-0b61-8035-b1b2-ee36f1fbb939" class="">Le substantif peut se décliner en genre et en nombre. Par exemple : les trois <em>girafes</em> ou les <em>parlers</em> provençaux. <em>Parlers</em> est alors un substantif masculin pluriel.</p><p id="232c1020-0b61-80ea-9378-d558631d4d07" class="">Il est variable en nombre (singulier ou pluriel) et parfois en genre (masculin ou féminin).</p><h2 id="232c1020-0b61-803b-a501-ed484b166fcb" class=""><mark class="highlight-orange"><span style="border-bottom:0.05em solid">Syntaxe</span></mark></h2><p id="232c1020-0b61-80e3-b00b-e0e2fd59efd5" class="">Le nom forme, avec les déterminants et les adjectifs qui se rapportent à lui, un syntagme ou groupe nominal.</p><p id="232c1020-0b61-80f8-afdf-c9443c2f3530" class="">En français, le noyau du syntagme nominal est toujours un nom qui impose normalement son genre et son nombre à ses satellites déterminants et qualificatifs et plus généralement aux mots auxquels il se rapporte : l&#x27;attribut mais aussi et surtout le verbe dont il est le sujet. Typiquement, le groupe nominal occupe une fonction de sujet, de complément d’une préposition ou de complément d’un verbe.</p><p id="232c1020-0b61-80ba-8105-c91065845429" class="">Le nom en français est le plus souvent précédé d&#x27;un déterminant. <br/>Cependant, le substantif peut également se trouver sans déterminant, <br/>notamment au vocatif : « Homme libre, toujours tu chériras la mer » livre ainsi un exemple de substantif, <br/><em>homme</em>, sans déterminant. Et la nature du lexème ne peut pas non plus toujours <br/>être déduite de la fonction qu’il occupe dans la phrase. Ainsi, dans « <br/><em>marcher</em> fait du bien », le sujet, <em>marcher</em>, n’est pas précédé d’un déterminant et n’est ni un substantif, ni un verbe substantivé, mais un verbe à l&#x27;infinitif.</p><p id="232c1020-0b61-80c7-ae2d-df942f1a4bff" class="">Le substantif ne forme pas toujours à lui seul une unité de sens. Ainsi, pour former un nom,<br/> d’après la définition sémantique et non grammaticale de ce terme, le <br/>substantif nécessite parfois d’être complété. Le substantif ainsi complété forme alors une locution nominale ; on parle également de syntagme nominal figé ou lexicalisé. Une telle locution est constituée de mots séparés par au moins une espace. Le mot principal d&#x27;un tel ensemble est nécessairement un substantif : chemin de fer, café crème, rose pompon, pois chiches, pommes de terre…<br/></p><p id="232c1020-0b61-8021-a401-f8c49f8e7c0f" class="">Certains syntagmes nominaux sont réduits pour former des sigles <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>17</mn></msup></mrow><annotation encoding="application/x-tex">^{17}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">17</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> et des acronymes <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>18</mn></msup></mrow><annotation encoding="application/x-tex">^{18}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, ces réductions affectant l&#x27;orthographe et la prononciation. Cependant, même si le sigle ou l&#x27;acronyme représente un syntagme nominal, rien n&#x27;empêche qu&#x27;il soit employé comme une autre catégorie, en tant qu&#x27;adjectif ou adverbe… : par exemple, « des gens très BCBG » pour signifier « des gens très bon chic bon genre » où « BCBG » est un syntagme nominal à valeur d&#x27;adjectif épithète.</p><hr id="232c1020-0b61-800f-87eb-ed58ed0c0162"/><h2 id="232c1020-0b61-808c-b217-f8afe2057f42" class=""><span style="border-bottom:0.05em solid">Annexe “le nom” :</span></h2><ol type="1" id="232c1020-0b61-8045-a882-fcf52d6fbd3e" class="numbered-list" start="1"><li>grammaire : Ensemble des règles qui régissent la structure d&#x27;une langue (morphologie, syntaxe, etc.).</li></ol><ol type="1" id="232c1020-0b61-80b9-95e7-c513bcc347ac" class="numbered-list" start="2"><li>natures : Catégories grammaticales des mots (nom, verbe, adjectif, etc.), aussi appelées classes ou catégories lexicales. </li></ol><ol type="1" id="232c1020-0b61-806d-b845-d72528cab353" class="numbered-list" start="3"><li>lemmes : Formes de base des mots, telles qu’on les trouve dans un dictionnaire (ex. : &quot;manger&quot; pour &quot;mangeons&quot;, &quot;mangé&quot;, etc.).</li></ol><ol type="1" id="232c1020-0b61-80ce-8602-cc906c8f1b30" class="numbered-list" start="4"><li>lexique : Ensemble des mots d&#x27;une langue ou d’un domaine, souvent considéré comme un dictionnaire mental.</li></ol><ol type="1" id="232c1020-0b61-80f8-9050-d0bc6444b9d6" class="numbered-list" start="5"><li>sémantique : Étude du sens des mots, des phrases et des textes dans une langue.</li></ol><ol type="1" id="232c1020-0b61-8080-8906-d6664723a074" class="numbered-list" start="6"><li>morphologique : Relatif à la structure interne des mots et à leurs variations (préfixes, suffixes, flexions, etc.).</li></ol><ol type="1" id="232c1020-0b61-8063-9c90-f6d69449f196" class="numbered-list" start="7"><li>syntaxique : Qui concerne l’organisation des mots en phrases selon des règles grammaticales.</li></ol><ol type="1" id="232c1020-0b61-80ce-85a3-fafdaa9f5a57" class="numbered-list" start="8"><li>linguistique : Science qui étudie le langage humain dans toutes ses dimensions (phonétique, syntaxe, sémantique, etc.).</li></ol><ol type="1" id="232c1020-0b61-80c2-bdf5-f6ad82461bf8" class="numbered-list" start="9"><li>entité : Élément (objet, personne, concept…) considéré comme une unité distincte dans le discours ou l’analyse.</li></ol><ol type="1" id="232c1020-0b61-8090-a725-c68169271f8f" class="numbered-list" start="10"><li>substantivation : Transformation d’un mot (souvent un adjectif ou verbe) en nom (ex. : &quot;le beau&quot;, &quot;le manger&quot;).</li></ol><ol type="1" id="232c1020-0b61-80c8-b764-cbf9cfdad9d8" class="numbered-list" start="11"><li>dénominal : Qui dérive d’un nom (ex. : &quot;salir&quot; dérivé de &quot;sale&quot;).</li></ol><ol type="1" id="232c1020-0b61-802b-a11a-e28ab3383fa3" class="numbered-list" start="12"><li>mots pleins : Mots porteurs de sens lexical fort (noms, verbes, adjectifs, adverbes), par opposition aux mots grammaticaux.</li></ol><ol type="1" id="232c1020-0b61-80c5-8991-fa065d7c907c" class="numbered-list" start="13"><li>extralinguistique : Qui ne relève pas directement de la langue, mais du contexte, de la culture ou du monde réel.</li></ol><ol type="1" id="232c1020-0b61-804a-93de-c8e969e7bfe9" class="numbered-list" start="14"><li>substance :  En linguistique, désigne le contenu concret ou matériel du langage, opposé à la forme ou à la structure.</li></ol><ol type="1" id="232c1020-0b61-8015-b0a1-c0ba648002ad" class="numbered-list" start="15"><li>syntagme : Groupe de mots formant une unité syntaxique (ex. : &quot;le grand chien noir&quot; est un syntagme nominal).</li></ol><ol type="1" id="232c1020-0b61-805b-84c5-db1a0b2bdd70" class="numbered-list" start="16"><li></li></ol><ol type="1" id="232c1020-0b61-8076-9a00-d331caf0dfe1" class="numbered-list" start="17"><li>sigle : Suite d’initiales prononcées lettre par lettre (ex. : &quot;ONU&quot;, &quot;CNRS&quot;).</li></ol><ol type="1" id="232c1020-0b61-800b-b699-eb18bb210b37" class="numbered-list" start="18"><li>acronyme : Sigle prononcé comme un mot ordinaire (ex. : &quot;OVNI&quot;, &quot;laser&quot;).</li></ol><p id="232c1020-0b61-8020-9284-dfc152f8286e" class="">
+</p><h1 id="232c1020-0b61-8029-b582-c9a105c7f18d" class=""><mark class="highlight-purple">b) Le déterminant </mark></h1><p id="232c1020-0b61-80e1-934c-eb225e4a9de5" class="">En grammaire, un <strong>déterminant</strong> est un mot-outil variable dont la fonction syntaxique est d&#x27;actualiser le nom en indiquant, le cas échéant, un certain nombre de précisions concernant celui-ci : genre, nombre, personne, etc. Il précède le nom, qui, avec celui-ci, forme un groupe nominal, dont le nom est le noyau.</p><h1 id="232c1020-0b61-80cd-94f5-ef669524f0b7" class=""><mark class="highlight-purple">c) L’adjectif qualificatif</mark></h1><ul id="232c1020-0b61-8060-a412-d4f6a428c62c" class="bulleted-list"><li style="list-style-type:disc">Apporte une précision sur le nom.</li></ul><ul id="232c1020-0b61-80bd-93cc-d8086e867976" class="bulleted-list"><li style="list-style-type:disc">S’accorde en genre et en nombre avec le nom.</li></ul><ul id="232c1020-0b61-80ae-95a5-dc0b2aec898c" class="bulleted-list"><li style="list-style-type:disc">Exemples : &quot;petit&quot;, &quot;intelligente&quot;, &quot;verts&quot;.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
